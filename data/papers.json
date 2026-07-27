@@ -1,0 +1,2002 @@
+[
+  {
+    "id": "1",
+    "title": "A Quantum-Enhanced Key Agreement and Signature Protocol for Securing Transportation Cyber-Physical Systems",
+    "authors": [
+      "Prathiba S.B.",
+      "Sankaranarayanan S.",
+      "Rajendran Shanthi R.",
+      "Ranganayakulu D.",
+      "Selvaraj A.K.",
+      "Rodrigues J.J.P.C."
+    ],
+    "abstract": "",
+    "keywords": [
+      "signature protocol",
+      "protocol securing",
+      "key agreement",
+      "securing transportation",
+      "agreement signature"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Transactions on Intelligent Transportation Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "2",
+    "title": "Optimizing traffic efficiency and emergency response through enhanced dynamic charging lanes, autonomous platooning systems, and 6G connectivity",
+    "authors": [
+      "Sahoo A.",
+      "Kumar Tripathy A."
+    ],
+    "abstract": "",
+    "keywords": [
+      "charging lanes",
+      "platooning systems",
+      "autonomous platooning",
+      "platooning",
+      "traffic efficiency"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Results in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "3",
+    "title": "Squirrel search-based capsule neural network for Alzheimer and Parkinson disease classification",
+    "authors": [
+      "Suganya A.",
+      "Aarthy S.L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "alzheimer parkinson",
+      "capsule neural",
+      "network alzheimer",
+      "alzheimer",
+      "parkinson disease"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Expert Systems with Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "4",
+    "title": "QoS-aware quantum service composition using multi-objective optimization",
+    "authors": [
+      "Nagarajan R.",
+      "Thirunavukarasu R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "quantum service",
+      "qos aware",
+      "qos",
+      "aware quantum",
+      "service composition"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Quantum Machine Intelligence",
+    "pdf_url": ""
+  },
+  {
+    "id": "5",
+    "title": "A novel attention bidirectional gated recurrent model for crop risk assessment using soil and environmental parameters",
+    "authors": [
+      "Sekar S.",
+      "Sathiyamoorthy E."
+    ],
+    "abstract": "",
+    "keywords": [
+      "crop risk",
+      "attention bidirectional",
+      "recurrent model",
+      "gated recurrent",
+      "model crop"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Environment, Development and Sustainability",
+    "pdf_url": ""
+  },
+  {
+    "id": "6",
+    "title": "A novel framework for secure and interoperable Digital Twins in the Industrial Metaverse",
+    "authors": [
+      "G. Menon V.",
+      "Padinjappurathu Gopalan S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "digital twins",
+      "interoperable digital",
+      "twins industrial",
+      "secure interoperable",
+      "twins"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Enterprise Information Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "7",
+    "title": "WISeRKNet: wide slice residual Kronecker network for lung cancer detection based on CT images",
+    "authors": [
+      "Shanthi A.",
+      "Satheesh Kumar S.",
+      "Koppu S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "residual kronecker",
+      "kronecker network",
+      "cancer detection",
+      "wiserknet wide",
+      "ct images"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "8",
+    "title": "A framework for enhancing pharmaceutical integrity and patient safety: novel mobile health solution integrating smart packaging and computer vision",
+    "authors": [
+      "K H.",
+      "Parikh V.",
+      "K P.S.",
+      "D S.",
+      "S R.V.I."
+    ],
+    "abstract": "",
+    "keywords": [
+      "smart packaging",
+      "pharmaceutical integrity",
+      "pharmaceutical",
+      "mobile health",
+      "enhancing pharmaceutical"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "9",
+    "title": "A hybrid deep learning framework using convolutional and transformer models for robust plant disease classification",
+    "authors": [
+      "Jawed M.M.",
+      "Tufail F.A.",
+      "Ahmed M.Z.",
+      "Adaline Suji R.",
+      "Nallusamy P.",
+      "Raja K.T."
+    ],
+    "abstract": "",
+    "keywords": [
+      "deep learning",
+      "convolutional transformer",
+      "disease classification",
+      "hybrid deep",
+      "plant disease"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "10",
+    "title": "An Intelligent Bi-directional Gate Recurrent Neural Network Based Hybrid Deep Learning Model for Text-based Sentiment Analysis",
+    "authors": [
+      "Selvi M.",
+      "Kumar S.V.N.S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "sentiment analysis",
+      "based sentiment",
+      "recurrent neural",
+      "sentiment",
+      "text based"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Computational Intelligence Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "11",
+    "title": "Early Detection of Leaf Venation Damage Using Smart Deep Learning with C-LSTM and GradCAM",
+    "authors": [
+      "Perumal I.",
+      "Kumar V.V.",
+      "Manikandan K.",
+      "Krishnamoorthy N."
+    ],
+    "abstract": "",
+    "keywords": [
+      "leaf venation",
+      "detection leaf",
+      "venation damage",
+      "lstm gradcam",
+      "learning lstm"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Computational Intelligence Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "12",
+    "title": "F-expansion method analysis of Navier-Bernoulli hypothesis and Love?s hypothesis driven nonlinear dispersive waves in Murnaghan?s cylindrical elastic rod",
+    "authors": [
+      "Silambarasan R.",
+      "Kilicman A.",
+      "Hammouch Z."
+    ],
+    "abstract": "",
+    "keywords": [
+      "dispersive waves",
+      "nonlinear dispersive",
+      "elastic rod",
+      "waves",
+      "cylindrical elastic"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Soft Computing",
+    "pdf_url": ""
+  },
+  {
+    "id": "13",
+    "title": "Alzheimer?s disease detection using a quantum deep neural network with Haralick feature extraction and simulated annealing optimization",
+    "authors": [
+      "Sabari V.S.",
+      "Jayalakshmi P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "quantum deep",
+      "using quantum",
+      "alzheimer disease",
+      "alzheimer",
+      "quantum"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "PeerJ Computer Science",
+    "pdf_url": ""
+  },
+  {
+    "id": "14",
+    "title": "Mathematical cognitive modelling enhanced by deep learning for understanding human decision making in complex sequential tasks",
+    "authors": [
+      "Ananthakrishnan G.",
+      "Ghanimi H.M.A.",
+      "Babu K.S.",
+      "Kata A.",
+      "Sravanthi G.",
+      "Smerat A.",
+      "Sengan S.",
+      "Dadheech P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "mathematical cognitive",
+      "cognitive modelling",
+      "sequential tasks",
+      "deep learning",
+      "modelling"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Interdisciplinary Mathematics",
+    "pdf_url": ""
+  },
+  {
+    "id": "15",
+    "title": "Hierarchical Interdependency Blockchain for Assessing Performance and Modulation Proof of Stake (POS) Security Protocol in Healthcare Application 5.0",
+    "authors": [
+      "Maheshwari V.",
+      "Prasanna M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "interdependency blockchain",
+      "blockchain",
+      "blockchain assessing",
+      "proof stake",
+      "pos security"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Recent Advances in Electrical and Electronic Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "16",
+    "title": "Metaheuristic optimization of a miniturized dual-band high-sensitivity THz biosensor for label free cancer detection",
+    "authors": [
+      "Ananthakrishnan G.",
+      "Narayanan M.",
+      "Dass R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "thz biosensor",
+      "sensitivity thz",
+      "biosensor label",
+      "biosensor",
+      "cancer detection"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Optik",
+    "pdf_url": ""
+  },
+  {
+    "id": "17",
+    "title": "Termite Apriori Prediction Framework for Detecting Cyber Threats in Social Networks",
+    "authors": [
+      "Sheba Pari N.",
+      "Senthil Kumar K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "termite apriori",
+      "apriori prediction",
+      "termite",
+      "detecting cyber",
+      "cyber threats"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Wireless Mobile Networks, Ubiquitous Computing, and Dependable Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "18",
+    "title": "A new machine learning technique for predicting river water quality using AVOA- RNN",
+    "authors": [
+      "Y R.",
+      "R.C K.",
+      "J V.",
+      "K K.",
+      "Mani D."
+    ],
+    "abstract": "",
+    "keywords": [
+      "predicting river",
+      "water quality",
+      "river water",
+      "avoa rnn",
+      "river"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Water Science",
+    "pdf_url": ""
+  },
+  {
+    "id": "19",
+    "title": "TRANSPARENT WILDFIRE DETECTION SYSTEMS: THE ROLE OF FIREDETXPLAINER IN EXPLAINABLE AI MODELS",
+    "authors": [
+      "Rohini C.",
+      "Kocharla L.",
+      "Geetha A.",
+      "Varalakshmi K.",
+      "Jagadeesan S.",
+      "Mandapati P.",
+      "Rao B.S.",
+      "Veesam V.S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "wildfire detection",
+      "firedetxplainer explainable",
+      "firedetxplainer",
+      "transparent wildfire",
+      "explainable ai"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Theoretical and Applied Information Technology",
+    "pdf_url": ""
+  },
+  {
+    "id": "20",
+    "title": "Workload Offloading in Object Detection using Edge Optimization and Deep Learning Model",
+    "authors": [
+      "Palaniappan S.C.",
+      "Ponnuswamy P.",
+      "Shanmugam B.",
+      "Dhandapani S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "workload offloading",
+      "offloading object",
+      "offloading",
+      "object detection",
+      "workload"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Engineering Science and Technology Review",
+    "pdf_url": ""
+  },
+  {
+    "id": "21",
+    "title": "Exponential long short-term memory with Levy flight optimization for lung nodule classification",
+    "authors": [
+      "Gowthami K.",
+      "Jayaseelan K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "optimization lung",
+      "memory levy",
+      "lung nodule",
+      "nodule classification",
+      "lung"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IAES International Journal of Artificial Intelligence",
+    "pdf_url": ""
+  },
+  {
+    "id": "22",
+    "title": "PPBEFL: PRIVACY-PRESERVING BLOCKCHAIN ENABLED FEDERATED LEARNING FOR HEALTHCARE DATA SECURITY",
+    "authors": [
+      "Bhardwaj T.",
+      "Sumangali K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "federated learning",
+      "ppbefl privacy",
+      "privacy preserving",
+      "federated",
+      "enabled federated"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Theoretical and Applied Information Technology",
+    "pdf_url": ""
+  },
+  {
+    "id": "23",
+    "title": "Federated Learning Approaches for Predicting and Modelling Brain Stroke Lesion Progression : A Review",
+    "authors": [
+      "M A.S.",
+      "Chowdhary C.L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "federated learning",
+      "brain stroke",
+      "modelling brain",
+      "stroke lesion",
+      "stroke"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Archives of Computational Methods in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "24",
+    "title": "A Review on Explainable, Federated Multimodal AI for Heart Disease Detection Using ECG, Cardiac Imaging, and Electronic Health Records",
+    "authors": [
+      "Murali P.",
+      "Meenatchi S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "ai heart",
+      "multimodal ai",
+      "federated multimodal",
+      "cardiac imaging",
+      "heart disease"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Engineering Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "25",
+    "title": "Deep learning framework for fault detection and diagnosis in grid-connected PV systems using GAN-based data augmentation",
+    "authors": [
+      "Radhakrishnan S.",
+      "Pothapragada I.S.",
+      "Murugan A.K.S.",
+      "Subramanian C.M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "using gan",
+      "gan based",
+      "gan",
+      "connected pv",
+      "deep learning"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Energy Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "26",
+    "title": "Machine learning driven identification of optimal nanomaterials for efficient pararosaniline dye removal from water using a RFHGB hybrid model",
+    "authors": [
+      "Anandhi G.",
+      "Iyapparaja M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "pararosaniline dye",
+      "dye removal",
+      "optimal nanomaterials",
+      "removal water",
+      "efficient pararosaniline"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "RSC Advances",
+    "pdf_url": ""
+  },
+  {
+    "id": "27",
+    "title": "Hybrid Sand Cat-Aquila optimization for enhanced intrusion detection in wireless networks",
+    "authors": [
+      "Yogaraja C.A.",
+      "Antony Seba P.",
+      "Ragavan K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "enhanced intrusion",
+      "intrusion detection",
+      "intrusion",
+      "aquila optimization",
+      "hybrid sand"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Systems Science and Control Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "28",
+    "title": "An Adaptive Blockchain Framework for Federated IoMT with Reinforcement Learning-Based Consensus and Resource Forecasting",
+    "authors": [
+      "Murthy C.H.V.N.U.B.",
+      "Shri M.L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "federated iomt",
+      "adaptive blockchain",
+      "iomt reinforcement",
+      "blockchain",
+      "blockchain framework"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "29",
+    "title": "Privacy-Preserving Multi-Class Skin Lesion Classification Using Single-Shot Machine Unlearning and Noise Maximization",
+    "authors": [
+      "Patel A.N.",
+      "Murugan R.",
+      "Yenduri G.",
+      "Maddikunta P.K.R.",
+      "Savarala B.B."
+    ],
+    "abstract": "",
+    "keywords": [
+      "privacy preserving",
+      "privacy",
+      "class skin",
+      "lesion classification",
+      "skin lesion"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "30",
+    "title": "FedWQP: a federated deep learning technique for water quality prediction",
+    "authors": [
+      "Kalaivanan K.",
+      "Chitra P.K.A.",
+      "Ramesh V.",
+      "Rajkumar Y."
+    ],
+    "abstract": "",
+    "keywords": [
+      "deep learning",
+      "water quality",
+      "federated deep",
+      "fedwqp",
+      "fedwqp federated"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of River Basin Management",
+    "pdf_url": ""
+  },
+  {
+    "id": "31",
+    "title": "RETRACTED: Optimized deep learning-based intrusion detection framework for vehicular network",
+    "authors": [
+      "Vishnukumar R.",
+      "Ramaiah M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "vehicular network",
+      "vehicular",
+      "framework vehicular",
+      "intrusion detection",
+      "intrusion"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Intelligent and Fuzzy Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "32",
+    "title": "RETRACTED: Artificial algae optimizer with hybrid deep learning based yoga posture recognition model",
+    "authors": [
+      "Vallabhaneni N.",
+      "Prabhavathy P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "yoga posture",
+      "yoga",
+      "based yoga",
+      "posture recognition",
+      "posture"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Intelligent and Fuzzy Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "33",
+    "title": "A comprehensive review on fragile and semi-fragile based watermarking systems for content authentication and tamper detection applications: Open issues, challenges and future directions",
+    "authors": [
+      "P Aberna",
+      "L. Agilandeeswari"
+    ],
+    "abstract": "",
+    "keywords": [
+      "watermarking systems",
+      "based watermarking",
+      "watermarking",
+      "authentication tamper",
+      "tamper detection"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Multimedia Tools and Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "34",
+    "title": "A comprehensive review on unmixing: an emerging tool for hyperspectral image analysis",
+    "authors": [
+      "Sreejam M.",
+      "Agilandeeswari L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "hyperspectral image",
+      "tool hyperspectral",
+      "hyperspectral",
+      "unmixing",
+      "unmixing emerging"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Multimedia Tools and Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "35",
+    "title": "Enhancing user authentication and security in metaverse: a review of innovative techniques and the role of zero-trust models",
+    "authors": [
+      "Ethiraj J.",
+      "Ellapan V."
+    ],
+    "abstract": "",
+    "keywords": [
+      "security metaverse",
+      "user authentication",
+      "authentication",
+      "authentication security",
+      "zero trust"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Frontiers in Virtual Reality",
+    "pdf_url": ""
+  },
+  {
+    "id": "36",
+    "title": "Autoencoder-based image encryption using hybrid scrambling, diffusion, and dimensionality reduction",
+    "authors": [
+      "Manikandan, S.",
+      "V, L.A.",
+      "Sreenivasan, S.",
+      "Thanikaiselvan, V.",
+      "Subashanthini, S.",
+      "Amirtharajan, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "image encryption",
+      "encryption",
+      "encryption using",
+      "scrambling diffusion",
+      "autoencoder based"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Results in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "37",
+    "title": "Optimized gated spatiotemporal graph attention network based diagnosis of facial expression through video games",
+    "authors": [
+      "K, P.R.",
+      "Uma, S.",
+      "Vijayaraj, V.",
+      "J, J.",
+      "T, S.",
+      "G, T."
+    ],
+    "abstract": "",
+    "keywords": [
+      "graph attention",
+      "attention network",
+      "facial expression",
+      "spatiotemporal graph",
+      "facial"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Pattern Recognition",
+    "pdf_url": ""
+  },
+  {
+    "id": "38",
+    "title": "Synthetic data-augmented HB-DTXGB model: An ML based photocatalytic degradation of tetracycline with CuO-ZnO/halloysite",
+    "authors": [
+      "Anandhi, G.",
+      "Iyapparaja, M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "photocatalytic degradation",
+      "based photocatalytic",
+      "photocatalytic",
+      "degradation tetracycline",
+      "hb dtxgb"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Environmental Chemical Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "39",
+    "title": "Integrating feature fusion with hybrid optimization for multiple sclerosis MRI classification",
+    "authors": [
+      "Anam, N.",
+      "S, S.B.",
+      "Chowdhary, C.L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "feature fusion",
+      "mri classification",
+      "sclerosis mri",
+      "multiple sclerosis",
+      "hybrid optimization"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Array",
+    "pdf_url": ""
+  },
+  {
+    "id": "40",
+    "title": "An explainable hybrid framework for early detection of cardiovascular diseases using Categorical Boosting and Bees algorithm",
+    "authors": [
+      "Sen, J.",
+      "Bhattacharya, S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "detection cardiovascular",
+      "categorical boosting",
+      "boosting bees",
+      "cardiovascular diseases",
+      "cardiovascular"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "41",
+    "title": "Blockchain-based cryptographic framework for secure data transmission in IoT edge environments using ECaps-Net",
+    "authors": [
+      "Islabudeen, I.",
+      "Syed Masood, J.A.I.",
+      "Thanapal, P.",
+      "Arumuga Arun, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "cryptographic framework",
+      "iot edge",
+      "using ecaps",
+      "blockchain based",
+      "ecaps net"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "42",
+    "title": "A Hybrid-based Deep Learning Framework for Pill Detection, Multi-Attribute Classification and Prediction with Metadata Retrieval",
+    "authors": [
+      "Sai Sachin, A.",
+      "Jayaraman, K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "pill detection",
+      "framework pill",
+      "pill",
+      "attribute classification",
+      "deep learning"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "43",
+    "title": "Optimization with R2U-Net nuclei segmentation and NASLe forward fractional network cell classification in pan-cancer histology images",
+    "authors": [
+      "Sriramakrishnan, G.V.",
+      "Prasad, V.",
+      "Balasubramaniam, S.R.",
+      "Gnanasekaran, D.",
+      "Sargunan, I.",
+      "Palanivel, B.V."
+    ],
+    "abstract": "",
+    "keywords": [
+      "nuclei segmentation",
+      "fractional network",
+      "cell classification",
+      "segmentation nasle",
+      "cancer histology"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "European Physical Journal Plus",
+    "pdf_url": ""
+  },
+  {
+    "id": "44",
+    "title": "Cross-border candidate credential verification using ZKP and blockchain Ethereum and Polygon perspectives: a scalable solution for authentic global corporate interviews",
+    "authors": [
+      "Rageshnithin, A.",
+      "Vanmathi, C.",
+      "Mangayarkarasi, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "credential verification",
+      "zkp blockchain",
+      "candidate credential",
+      "credential",
+      "authentic global"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Frontiers in Blockchain",
+    "pdf_url": ""
+  },
+  {
+    "id": "45",
+    "title": "Residual-Shuffle2DConv-Squeeze Network Approach for Enhanced Blood Cell Segmentation and Hematological Disorder Detection",
+    "authors": [
+      "Umarani, P.",
+      "Perumal, P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "segmentation hematological",
+      "residual shuffle2dconv",
+      "cell segmentation",
+      "shuffle2dconv squeeze",
+      "shuffle2dconv"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Microscopy Research and Technique",
+    "pdf_url": ""
+  },
+  {
+    "id": "46",
+    "title": "Applying Multi-Modal Quantum Deep Learning Algorithms for Enhanced Fake News Detection",
+    "authors": [
+      "Aishwarya, C.",
+      "Venkatesan, M.",
+      "Prabhavathy",
+      "Akanksha, D."
+    ],
+    "abstract": "",
+    "keywords": [
+      "quantum deep",
+      "modal quantum",
+      "news detection",
+      "quantum",
+      "fake news"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Acta Physica Polonica B",
+    "pdf_url": ""
+  },
+  {
+    "id": "47",
+    "title": "Impact of Online Education: an Artificial Intelligence-Based analysis",
+    "authors": [
+      "Radhakrishnan, R.",
+      "Yaswanth, G.",
+      "Chatterjee, J.M.",
+      "Priyadarshini, I."
+    ],
+    "abstract": "",
+    "keywords": [
+      "online education",
+      "education artificial",
+      "impact online",
+      "education",
+      "artificial intelligence"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Proceedings of the National Academy of Sciences India Section A – Physical Sciences",
+    "pdf_url": ""
+  },
+  {
+    "id": "48",
+    "title": "Efficient operation of Z-source integrated coupled inductor Cuk converter with optimised PI control for HRES microgrid environments",
+    "authors": [
+      "Mol, E.J.",
+      "Lenine, D.",
+      "Barathi, K.",
+      "Kumar, A.A."
+    ],
+    "abstract": "",
+    "keywords": [
+      "hres microgrid",
+      "inductor cuk",
+      "microgrid",
+      "cuk converter",
+      "microgrid environments"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Electronics",
+    "pdf_url": ""
+  },
+  {
+    "id": "49",
+    "title": "Bootstrap Forest based method for Encrypted Network Traffic Analysis",
+    "authors": [
+      "Durairaju, S.",
+      "Cherukuri, A.K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "encrypted network",
+      "traffic analysis",
+      "network traffic",
+      "method encrypted",
+      "bootstrap forest"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Information and Organizational Sciences",
+    "pdf_url": ""
+  },
+  {
+    "id": "50",
+    "title": "Detection and Classification of Emergency Vehicles from Audio and Video Inputs using Deep Learning Techniques",
+    "authors": [
+      "Ephzibah, E.P.",
+      "Mareeswari, V.",
+      "Ibrahim, A.O.",
+      "Samson, N.",
+      "Nasikethan, R.",
+      "Ghazali, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "vehicles audio",
+      "emergency vehicles",
+      "classification emergency",
+      "deep learning",
+      "detection classification"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Soft Computing and Data Mining",
+    "pdf_url": ""
+  },
+  {
+    "id": "51",
+    "title": "Dual-Stage Deep Learning Framework for Autism Spectrum Disorder Detection and Severity Classification Using Swin3D Transformer and GAT-LSTM Networks",
+    "authors": [
+      "Padmapriya, A.",
+      "Suganya, D.",
+      "Kalpana, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "autism spectrum",
+      "framework autism",
+      "gat lstm",
+      "lstm networks",
+      "deep learning"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "SN Computer Science",
+    "pdf_url": ""
+  },
+  {
+    "id": "52",
+    "title": "An Integrated Secure Software Vulnerability Framework for Security in Web Application",
+    "authors": [
+      "Viswanathan, G.",
+      "Prabhu, J."
+    ],
+    "abstract": "",
+    "keywords": [
+      "vulnerability framework",
+      "software vulnerability",
+      "framework security",
+      "security web",
+      "integrated secure"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Reliability, Quality and Safety Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "53",
+    "title": "Smart and secure emergency vehicle to vehicle communication architecture using customized edge blockchain for internet of medical things",
+    "authors": [
+      "Marimuthu, M.",
+      "Mohanraj, G.",
+      "Ramalingam, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "edge blockchain",
+      "blockchain internet",
+      "emergency vehicle",
+      "vehicle communication",
+      "blockchain"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Results in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "54",
+    "title": "Encrypted network traffic analysis using quantum machine learning",
+    "authors": [
+      "Sodar, G.S.",
+      "Murthy, A.",
+      "Jonnalagadda, A.",
+      "Cherukuri, A.K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "encrypted network",
+      "using quantum",
+      "quantum machine",
+      "quantum",
+      "traffic analysis"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "EPJ Quantum Technology",
+    "pdf_url": ""
+  },
+  {
+    "id": "55",
+    "title": "Enhancing multiclass plant disease classification using GAN-boosted vision transformer with XAI insights",
+    "authors": [
+      "Felicita, S.A.M.",
+      "Kavitha, B.R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "using gan",
+      "gan boosted",
+      "disease classification",
+      "boosted vision",
+      "gan"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Frontiers in Plant Science",
+    "pdf_url": ""
+  },
+  {
+    "id": "56",
+    "title": "BDST: Boundary-dependent deviating segmentation technique using concurrent layer learning",
+    "authors": [
+      "Murugesan, S.",
+      "Hemalatha, K.",
+      "Mathivanan, S.K.",
+      "Rajadurai, H.",
+      "Panneerselvam, K.",
+      "Ahmad, N.",
+      "Haleem, A.",
+      "Mallik, S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "deviating segmentation",
+      "segmentation",
+      "segmentation technique",
+      "layer learning",
+      "bdst boundary"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Egyptian Informatics Journal",
+    "pdf_url": ""
+  },
+  {
+    "id": "57",
+    "title": "Multi-class eye disease classification using deep learning EfficientNetB0 fusion techniques",
+    "authors": [
+      "Sah, U.K.",
+      "Chatterjee, J.M.",
+      "Radhakrishnan, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "eye disease",
+      "efficientnetb0 fusion",
+      "class eye",
+      "disease classification",
+      "learning efficientnetb0"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "58",
+    "title": "CocoSyn: A Deployment-Ready Federated Framework for Coconut Disease Detection Validated by the SAFE Protocol",
+    "authors": [
+      "Bommineni, K.R.",
+      "Daga, M.",
+      "Naole, S.",
+      "Ramu, S.P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "framework coconut",
+      "coconut disease",
+      "cocosyn deployment",
+      "federated framework",
+      "coconut"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "59",
+    "title": "Memory-Efficient Multi-Island Jaya Feature Selection for Large-Scale DDoS Attack Detection",
+    "authors": [
+      "Singh, G.",
+      "Khare, N."
+    ],
+    "abstract": "",
+    "keywords": [
+      "ddos attack",
+      "scale ddos",
+      "ddos",
+      "island jaya",
+      "jaya feature"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "60",
+    "title": "An Enhanced Horse Herding Optimizer- Driven Feature Selection Approach Integrated with CNN for Network Intrusion Detection Systems",
+    "authors": [
+      "Nandhini, U.",
+      "Kumar, S.V.N.S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "intrusion detection",
+      "network intrusion",
+      "feature selection",
+      "herding optimizer",
+      "horse herding"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Computational Intelligence Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "61",
+    "title": "Hybrid deep learning and feature optimization approach for early detection of multiple sclerosis",
+    "authors": [
+      "Anam, N.",
+      "S, S.B.",
+      "Chowdhary, C.L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "multiple sclerosis",
+      "deep learning",
+      "hybrid deep",
+      "feature optimization",
+      "sclerosis"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Frontiers in Human Neuroscience",
+    "pdf_url": ""
+  },
+  {
+    "id": "62",
+    "title": "Separable reversible data hiding in an encrypted image using unaltered adjacent pixels to enhance information security",
+    "authors": [
+      "Anushiadevi, R.",
+      "Venkatesh, V.",
+      "P.V.",
+      "S.",
+      "Subashanthini, S.",
+      "D.",
+      "Amirtharajan, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "encrypted image",
+      "hiding encrypted",
+      "data hiding",
+      "reversible data",
+      "encrypted"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Peer-to-Peer Networking and Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "63",
+    "title": "EPIC-NET: EEG-based epilepsy classification and brain localization using Optuna wave- gated recurrent unit network",
+    "authors": [
+      "Manjupriya, R.",
+      "Leema, A.A."
+    ],
+    "abstract": "",
+    "keywords": [
+      "epilepsy classification",
+      "based epilepsy",
+      "epilepsy",
+      "net eeg",
+      "brain localization"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Frontiers in Computational Neuroscience",
+    "pdf_url": ""
+  },
+  {
+    "id": "64",
+    "title": "Horned lizard-catboost framework for cyberbullying prevention in social networks",
+    "authors": [
+      "Pari, N.",
+      "Kumar, S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "cyberbullying prevention",
+      "framework cyberbullying",
+      "cyberbullying",
+      "lizard catboost",
+      "horned lizard"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Archives for Technical Sciences",
+    "pdf_url": ""
+  },
+  {
+    "id": "65",
+    "title": "A Multi-Graph Neural Network attention fusion framework for emotion-aware subgraph anomaly detection in social media fake news propagation",
+    "authors": [
+      "Daniel, G.V.",
+      "Chandrasekaran, K.",
+      "Venkatesan, M.",
+      "Prabhavathy, P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "subgraph anomaly",
+      "graph neural",
+      "aware subgraph",
+      "subgraph",
+      "news propagation"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Cognitive Computing in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "66",
+    "title": "Enhanced Financial Time-Series Forecasting with Hybrid PSO-Fuzzy Rough Set-GRU Model",
+    "authors": [
+      "Thiyagarajan, S.",
+      "Radhakrishnan, R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "forecasting hybrid",
+      "fuzzy rough",
+      "pso fuzzy",
+      "series forecasting",
+      "rough set"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Computer Information Systems and Industrial Management Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "67",
+    "title": "Beauty ideals, consumer choices, and their impact on adolescent self-esteem and psychological well-being",
+    "authors": [
+      "Sekar, D.",
+      "Ramesh, A.",
+      "Mahesh, G.",
+      "Bhuvaneswari, M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "beauty ideals",
+      "adolescent self",
+      "self esteem",
+      "esteem psychological",
+      "beauty"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Spa and Wellness",
+    "pdf_url": ""
+  },
+  {
+    "id": "68",
+    "title": "A Comprehensive Survey of Machine Learning Algorithms in Hand Gesture Recognition for Myoelectric Prosthetic Control: Current Trends, Challenges and Future Directions",
+    "authors": [
+      "Tamilvanan, P.",
+      "Elumalai, V.K.",
+      "Elumalai, B."
+    ],
+    "abstract": "",
+    "keywords": [
+      "recognition myoelectric",
+      "myoelectric prosthetic",
+      "gesture recognition",
+      "prosthetic control",
+      "hand gesture"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Archives of Computational Methods in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "69",
+    "title": "Multimodal fusion and explainability of artificial intelligence models in Alzheimer’s Disease detection",
+    "authors": [
+      "Viswan, V.",
+      "Noushath, N.",
+      "Malathy, E.",
+      "Selvi, G.",
+      "Kavitha, B.R.",
+      "Abdesselam, A.",
+      "Wang, S.",
+      "Suganthan, P.N.",
+      "Shezawi, I.A.",
+      "Mahmud, M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "models alzheimer",
+      "multimodal fusion",
+      "alzheimer disease",
+      "fusion explainability",
+      "alzheimer"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Brain Informatics",
+    "pdf_url": ""
+  },
+  {
+    "id": "70",
+    "title": "A Review on Air Pollution Prediction Using Artificial Intelligence",
+    "authors": [
+      "Jai Kumaran G",
+      "Senthilkumar Mohan"
+    ],
+    "abstract": "",
+    "keywords": [
+      "pollution prediction",
+      "air pollution",
+      "pollution",
+      "artificial intelligence",
+      "prediction using"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "71",
+    "title": "Bridging Languages in Healthcare: A Comprehensive Review of Multilingual and Code-Switched Chatbot Interactions",
+    "authors": [
+      "Tejasri, K.",
+      "Lawanya Shri, M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "chatbot interactions",
+      "languages healthcare",
+      "multilingual code",
+      "switched chatbot",
+      "chatbot"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "72",
+    "title": "Deep learning framework for fault detection and diagnosis in grid-connectedPV systems using GAN-based data augmentation",
+    "authors": [
+      "Radhakrishnan S.",
+      "Pothapragada I.S.",
+      "Murugan A.K.S.",
+      "Subramanian C.M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "grid connectedpv",
+      "using gan",
+      "gan based",
+      "gan",
+      "connectedpv systems"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Energy Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "73",
+    "title": "Machine learning driven identification of optimal nanomaterials for efficient pararosaniline dye removal from waterusing a RFHGB hybrid model",
+    "authors": [
+      "Anandhi G.",
+      "Iyapparaja M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "pararosaniline dye",
+      "dye removal",
+      "optimal nanomaterials",
+      "nanomaterials efficient",
+      "dye"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "RSC Advances",
+    "pdf_url": ""
+  },
+  {
+    "id": "74",
+    "title": "Hybrid Sand Cat-Aquila optimization for enhanced intrusion detection in wirelessnetworks",
+    "authors": [
+      "Yogaraja C.A.",
+      "Antony Seba P.",
+      "Ragavan K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "detection wirelessnetworks",
+      "enhanced intrusion",
+      "wirelessnetworks",
+      "intrusion detection",
+      "hybrid sand"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Systems Science and Control Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "75",
+    "title": "Privacy-Preserving Multi-Class Skin Lesion Classification Using Single-Shot MachineUnlearning and Noise Maximization",
+    "authors": [
+      "Patel A.N.",
+      "Murugan R.",
+      "Yenduri G.",
+      "Maddikunta P.K.R.",
+      "Savarala B.B."
+    ],
+    "abstract": "",
+    "keywords": [
+      "privacy preserving",
+      "privacy",
+      "lesion classification",
+      "class skin",
+      "machineunlearning noise"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IEEE Access",
+    "pdf_url": ""
+  },
+  {
+    "id": "76",
+    "title": "RETRACTED: Optimized deep learning-based intrusion detection framework for vehicularnetwork",
+    "authors": [
+      "Vishnukumar R.",
+      "Ramaiah M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "vehicularnetwork",
+      "framework vehicularnetwork",
+      "deep learning",
+      "intrusion",
+      "intrusion detection"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Intelligent and Fuzzy Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "77",
+    "title": "RETRACTED: Artificial algae optimizer with hybrid deep learning based yoga posturerecognition model",
+    "authors": [
+      "Vallabhaneni N.",
+      "Prabhavathy P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "yoga posturerecognition",
+      "yoga",
+      "based yoga",
+      "posturerecognition model",
+      "posturerecognition"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Journal of Intelligent and Fuzzy Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "78",
+    "title": "A comprehensive review on unmixing: an emerging tool for hyperspectral imageanalysis",
+    "authors": [
+      "Sreejam M.",
+      "Agilandeeswari L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "hyperspectral imageanalysis",
+      "tool hyperspectral",
+      "hyperspectral",
+      "unmixing",
+      "review unmixing"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Multimedia Tools and Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "79",
+    "title": "Optimizing traffic efficiency and emergency response through enhanced dynamic charging lanes, autonomous platooningsystems, and 6G connectivity",
+    "authors": [
+      "Sahoo A.",
+      "Kumar Tripathy A."
+    ],
+    "abstract": "",
+    "keywords": [
+      "platooningsystems 6g",
+      "charging lanes",
+      "autonomous platooningsystems",
+      "platooningsystems",
+      "lanes autonomous"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Results in Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "80",
+    "title": "Squirrel search-based capsule neural network for Alzheimer and Parkinsondisease classification",
+    "authors": [
+      "Suganya A.",
+      "Aarthy S.L."
+    ],
+    "abstract": "",
+    "keywords": [
+      "alzheimer parkinsondisease",
+      "parkinsondisease classification",
+      "capsule neural",
+      "network alzheimer",
+      "parkinsondisease"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Expert Systems with Applications",
+    "pdf_url": ""
+  },
+  {
+    "id": "81",
+    "title": "A novel attention bidirectional gated recurrent model for crop risk assessmentusing soil and environmental parameters",
+    "authors": [
+      "Sekar S.",
+      "Sathiyamoorthy E."
+    ],
+    "abstract": "",
+    "keywords": [
+      "crop risk",
+      "recurrent model",
+      "attention bidirectional",
+      "gated recurrent",
+      "soil environmental"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Environment, Development andSustainability",
+    "pdf_url": ""
+  },
+  {
+    "id": "82",
+    "title": "A novel framework for secure and interoperable Digital Twins in the IndustrialMetaverse",
+    "authors": [
+      "G. Menon V.",
+      "Padinjappurathu Gopalan S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "digital twins",
+      "twins industrialmetaverse",
+      "interoperable digital",
+      "secure interoperable",
+      "twins"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Enterprise Information Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "83",
+    "title": "WISeRKNet: wide slice residual Kronecker network for lung cancer detection basedon CT images",
+    "authors": [
+      "Shanthi A.",
+      "Satheesh Kumar S.",
+      "Koppu S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "residual kronecker",
+      "kronecker network",
+      "cancer detection",
+      "wiserknet wide",
+      "ct images"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "84",
+    "title": "A framework for enhancing pharmaceutical integrity and patient safety: novel mobile health solution integrating smart packagingand computer vision",
+    "authors": [
+      "K H.",
+      "Parikh V.",
+      "K P.S.",
+      "D S.",
+      "S R.V.I."
+    ],
+    "abstract": "",
+    "keywords": [
+      "smart packagingand",
+      "pharmaceutical integrity",
+      "mobile health",
+      "pharmaceutical",
+      "enhancing pharmaceutical"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "85",
+    "title": "A hybrid deep learning framework using convolutional and transformer models forrobust plant disease classification",
+    "authors": [
+      "Jawed M.M.",
+      "Tufail F.A.",
+      "Ahmed M.Z.",
+      "Adaline Suji R.",
+      "Nallusamy P.",
+      "Raja K.T."
+    ],
+    "abstract": "",
+    "keywords": [
+      "deep learning",
+      "convolutional transformer",
+      "disease classification",
+      "hybrid deep",
+      "plant disease"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Scientific Reports",
+    "pdf_url": ""
+  },
+  {
+    "id": "86",
+    "title": "An Intelligent Bi-directional Gate RecurrentNeural Network Based Hybrid Deep Learning Model for Text-based Sentiment Analysis",
+    "authors": [
+      "Selvi M.",
+      "Kumar S.V.N.S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "recurrentneural network",
+      "sentiment analysis",
+      "based sentiment",
+      "sentiment",
+      "gate recurrentneural"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journalof Computational Intelligence Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "87",
+    "title": "Early Detection of Leaf Venation Damage Using Smart Deep Learning with C-LSTM andGradCAM",
+    "authors": [
+      "Perumal I.",
+      "Kumar V.V.",
+      "Manikandan K.",
+      "Krishnamoorthy N."
+    ],
+    "abstract": "",
+    "keywords": [
+      "leaf venation",
+      "detection leaf",
+      "venation damage",
+      "learning lstm",
+      "lstm andgradcam"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "International Journal of Computational Intelligence Systems",
+    "pdf_url": ""
+  },
+  {
+    "id": "88",
+    "title": "F-expansion method analysis of Navier-Bernoulli hypothesis and Love?s hypothesis driven nonlinear dispersive waves inMurnaghan?s cylindrical elastic rod",
+    "authors": [
+      "Silambarasan R.",
+      "Kilicman A.",
+      "Hammouch Z."
+    ],
+    "abstract": "",
+    "keywords": [
+      "dispersive waves",
+      "nonlinear dispersive",
+      "waves",
+      "elastic rod",
+      "cylindrical elastic"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Soft Computing",
+    "pdf_url": ""
+  },
+  {
+    "id": "89",
+    "title": "Alzheimer?s disease detection using a quantum deep neural network with Haralick feature extraction and simulated annealingoptimization",
+    "authors": [
+      "Sabari V.S.",
+      "Jayalakshmi P."
+    ],
+    "abstract": "",
+    "keywords": [
+      "quantum deep",
+      "alzheimer disease",
+      "using quantum",
+      "alzheimer",
+      "disease detection"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "PeerJ Computer Science",
+    "pdf_url": ""
+  },
+  {
+    "id": "90",
+    "title": "Hierarchical Interdependency Blockchain for Assessing Performance and Modulation Proof of Stake (POS) Security Protocol inHealthcare Application 5.0",
+    "authors": [
+      "Maheshwari V.",
+      "Prasanna M."
+    ],
+    "abstract": "",
+    "keywords": [
+      "interdependency blockchain",
+      "blockchain assessing",
+      "blockchain",
+      "proof stake",
+      "stake pos"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Recent Advances in Electrical and Electronic Engineering",
+    "pdf_url": ""
+  },
+  {
+    "id": "91",
+    "title": "Metaheuristic optimization of a miniturized dual-band high-sensitivity THz biosensor forlabel free cancer detection",
+    "authors": [
+      "Ananthakrishnan G.",
+      "Narayanan M.",
+      "Dass R."
+    ],
+    "abstract": "",
+    "keywords": [
+      "thz biosensor",
+      "sensitivity thz",
+      "biosensor forlabel",
+      "biosensor",
+      "cancer detection"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Optik",
+    "pdf_url": ""
+  },
+  {
+    "id": "92",
+    "title": "A new machine learning technique for predicting river water quality using AVOA-RNN",
+    "authors": [
+      "Y R.",
+      "R.C K.",
+      "J V.",
+      "K K.",
+      "Mani D."
+    ],
+    "abstract": "",
+    "keywords": [
+      "predicting river",
+      "water quality",
+      "river water",
+      "avoa rnn",
+      "river"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Water Science",
+    "pdf_url": ""
+  },
+  {
+    "id": "93",
+    "title": "Exponential long short-term memory with Levy flight optimization for lung noduleclassification",
+    "authors": [
+      "Gowthami K.",
+      "Jayaseelan K."
+    ],
+    "abstract": "",
+    "keywords": [
+      "lung noduleclassification",
+      "optimization lung",
+      "memory levy",
+      "noduleclassification",
+      "lung"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "IAES International Journal of Artificial Intelligence",
+    "pdf_url": ""
+  },
+  {
+    "id": "94",
+    "title": "A Review on Explainable, Federated Multimodal AI for Heart Disease Detection Using ECG, Cardiac Imaging,and Electronic Health Records",
+    "authors": [
+      "Murali P.",
+      "Meenatchi S."
+    ],
+    "abstract": "",
+    "keywords": [
+      "ai heart",
+      "multimodal ai",
+      "federated multimodal",
+      "cardiac imaging",
+      "heart disease"
+    ],
+    "department": "School of Computer Science Engineering and Information Systems (SCORE)",
+    "year": 2026,
+    "journal": "Engineering Reports",
+    "pdf_url": ""
+  }
+]
