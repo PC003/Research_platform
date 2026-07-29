@@ -1,47 +1,35 @@
 import { useState, useEffect } from 'react';
-import { fetchDepartments } from '../api/paperApi.js';
+import { fetchDepartments, fetchSchools, fetchPaperTypes } from '../api/paperApi.js';
 
 function FilterPanel({ filters, onFilterChange }) {
   const [departments, setDepartments] = useState([]);
+  const [schools, setSchools] = useState([]);
+  const [paperTypes, setPaperTypes] = useState([]);
 
   useEffect(() => {
-    fetchDepartments()
-      .then(setDepartments)
-      .catch(() => setDepartments([]));
+    fetchDepartments().then(setDepartments).catch(() => setDepartments([]));
+    fetchSchools().then(setSchools).catch(() => setSchools([]));
+    fetchPaperTypes().then(setPaperTypes).catch(() => setPaperTypes([]));
   }, []);
 
-  function handleDepartmentChange(e) {
-    onFilterChange({
-      ...filters,
-      department: e.target.value || null,
-    });
-  }
-
-  function handleYearFromChange(e) {
-    const value = e.target.value ? parseInt(e.target.value, 10) : null;
-    onFilterChange({
-      ...filters,
-      year_from: value,
-    });
-  }
-
-  function handleYearToChange(e) {
-    const value = e.target.value ? parseInt(e.target.value, 10) : null;
-    onFilterChange({
-      ...filters,
-      year_to: value,
-    });
+  function handleChange(field, value) {
+    onFilterChange({ ...filters, [field]: value || null });
   }
 
   function handleClearFilters() {
     onFilterChange({
       department: null,
+      school: null,
       year_from: null,
       year_to: null,
+      paper_type: null,
+      sort: 'relevance',
     });
   }
 
-  const hasActiveFilters = filters.department || filters.year_from || filters.year_to;
+  const hasActiveFilters =
+    filters.department || filters.school || filters.year_from ||
+    filters.year_to || filters.paper_type;
 
   return (
     <aside className="rounded-lg border border-gray-200 bg-white p-5">
@@ -57,6 +45,26 @@ function FilterPanel({ filters, onFilterChange }) {
         )}
       </div>
 
+      {/* Sort */}
+      <div className="mb-4">
+        <label htmlFor="filter-sort" className="mb-1.5 block text-xs font-medium text-gray-600">
+          Sort by
+        </label>
+        <select
+          id="filter-sort"
+          value={filters.sort || 'relevance'}
+          onChange={(e) => handleChange('sort', e.target.value)}
+          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        >
+          <option value="relevance">Relevance</option>
+          <option value="newest">Newest first</option>
+          <option value="oldest">Oldest first</option>
+          <option value="citations_desc">Most cited</option>
+          <option value="impact_desc">Highest impact</option>
+          <option value="alphabetical">A → Z</option>
+        </select>
+      </div>
+
       {/* Department filter */}
       <div className="mb-4">
         <label htmlFor="filter-department" className="mb-1.5 block text-xs font-medium text-gray-600">
@@ -65,14 +73,48 @@ function FilterPanel({ filters, onFilterChange }) {
         <select
           id="filter-department"
           value={filters.department || ''}
-          onChange={handleDepartmentChange}
+          onChange={(e) => handleChange('department', e.target.value)}
           className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
         >
           <option value="">All departments</option>
           {departments.map((dept) => (
-            <option key={dept} value={dept}>
-              {dept}
-            </option>
+            <option key={dept} value={dept}>{dept}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* School filter */}
+      <div className="mb-4">
+        <label htmlFor="filter-school" className="mb-1.5 block text-xs font-medium text-gray-600">
+          School
+        </label>
+        <select
+          id="filter-school"
+          value={filters.school || ''}
+          onChange={(e) => handleChange('school', e.target.value)}
+          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        >
+          <option value="">All schools</option>
+          {schools.map((s) => (
+            <option key={s} value={s}>{s}</option>
+          ))}
+        </select>
+      </div>
+
+      {/* Paper type filter */}
+      <div className="mb-4">
+        <label htmlFor="filter-paper-type" className="mb-1.5 block text-xs font-medium text-gray-600">
+          Paper type
+        </label>
+        <select
+          id="filter-paper-type"
+          value={filters.paper_type || ''}
+          onChange={(e) => handleChange('paper_type', e.target.value)}
+          className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
+        >
+          <option value="">All types</option>
+          {paperTypes.map((t) => (
+            <option key={t} value={t}>{t}</option>
           ))}
         </select>
       </div>
@@ -88,8 +130,8 @@ function FilterPanel({ filters, onFilterChange }) {
             type="number"
             placeholder="From"
             value={filters.year_from || ''}
-            onChange={handleYearFromChange}
-            min={1900}
+            onChange={(e) => handleChange('year_from', e.target.value ? parseInt(e.target.value, 10) : null)}
+            min={2000}
             max={2030}
             className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />
@@ -99,8 +141,8 @@ function FilterPanel({ filters, onFilterChange }) {
             type="number"
             placeholder="To"
             value={filters.year_to || ''}
-            onChange={handleYearToChange}
-            min={1900}
+            onChange={(e) => handleChange('year_to', e.target.value ? parseInt(e.target.value, 10) : null)}
+            min={2000}
             max={2030}
             className="w-full rounded-md border border-gray-300 bg-white px-3 py-2 text-sm text-gray-900 focus:border-blue-500 focus:outline-none focus:ring-1 focus:ring-blue-500"
           />

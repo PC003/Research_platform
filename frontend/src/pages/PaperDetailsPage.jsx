@@ -32,10 +32,7 @@ function PaperDetailsPage() {
         <p className="mb-4 text-lg font-medium text-gray-600">
           {error || 'Paper not found'}
         </p>
-        <Link
-          to="/"
-          className="text-sm font-medium text-blue-600 hover:underline"
-        >
+        <Link to="/" className="text-sm font-medium text-blue-600 hover:underline">
           ← Back to search
         </Link>
       </div>
@@ -65,28 +62,85 @@ function PaperDetailsPage() {
 
         {/* Metadata badges */}
         <div className="mb-6 flex flex-wrap gap-2">
-          <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
-            {paper.department}
-          </span>
-          <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
-            {paper.year}
-          </span>
-          {paper.journal && (
+          {paper.department && (
+            <span className="rounded-full bg-blue-50 px-3 py-1 text-xs font-medium text-blue-700">
+              {paper.department}
+            </span>
+          )}
+          {paper.year > 0 && (
             <span className="rounded-full bg-gray-100 px-3 py-1 text-xs font-medium text-gray-600">
-              {paper.journal}
+              {paper.year}
+            </span>
+          )}
+          {paper.paper_type && (
+            <span className="rounded-full bg-purple-50 px-3 py-1 text-xs font-medium text-purple-700">
+              {paper.paper_type}
+            </span>
+          )}
+          {paper.status && (
+            <span className="rounded-full bg-green-50 px-3 py-1 text-xs font-medium text-green-700">
+              {paper.status}
+            </span>
+          )}
+          {paper.collaboration_type && (
+            <span className="rounded-full bg-orange-50 px-3 py-1 text-xs font-medium text-orange-700">
+              {paper.collaboration_type}
             </span>
           )}
         </div>
 
+        {/* Metrics row */}
+        <div className="mb-6 flex flex-wrap gap-6 rounded-lg border border-gray-200 bg-gray-50 px-5 py-3">
+          {paper.citation_count > 0 && (
+            <div>
+              <p className="text-xs text-gray-500">Citations</p>
+              <p className="text-lg font-semibold text-gray-900">{paper.citation_count}</p>
+            </div>
+          )}
+          {paper.impact_factor && (
+            <div>
+              <p className="text-xs text-gray-500">Impact Factor</p>
+              <p className="text-lg font-semibold text-gray-900">{paper.impact_factor}</p>
+            </div>
+          )}
+          {paper.journal && (
+            <div>
+              <p className="text-xs text-gray-500">Journal</p>
+              <p className="text-sm font-medium text-gray-900">{paper.journal}</p>
+            </div>
+          )}
+          {paper.conference_name && (
+            <div>
+              <p className="text-xs text-gray-500">Conference</p>
+              <p className="text-sm font-medium text-gray-900">{paper.conference_name}</p>
+            </div>
+          )}
+        </div>
+
+        {/* Student link */}
+        {paper.student_id && (
+          <div className="mb-6">
+            <p className="text-xs text-gray-500 mb-1">Student</p>
+            <Link
+              to={`/students/${paper.student_id}`}
+              className="text-sm font-medium text-blue-600 hover:underline"
+            >
+              {paper.student_id}
+            </Link>
+          </div>
+        )}
+
         {/* Abstract */}
-        <section className="mb-6">
-          <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
-            Abstract
-          </h2>
-          <p className="leading-relaxed text-gray-700">
-            {paper.abstract}
-          </p>
-        </section>
+        {paper.abstract && (
+          <section className="mb-6">
+            <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+              Abstract
+            </h2>
+            <p className="leading-relaxed text-gray-700">
+              {paper.abstract}
+            </p>
+          </section>
+        )}
 
         {/* Keywords */}
         {paper.keywords && paper.keywords.length > 0 && (
@@ -104,6 +158,23 @@ function PaperDetailsPage() {
                 </span>
               ))}
             </div>
+          </section>
+        )}
+
+        {/* DOI */}
+        {paper.doi && (
+          <section className="mb-6">
+            <h2 className="mb-2 text-sm font-semibold uppercase tracking-wide text-gray-500">
+              DOI
+            </h2>
+            <a
+              href={`https://doi.org/${paper.doi}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-blue-600 hover:underline"
+            >
+              {paper.doi}
+            </a>
           </section>
         )}
 

@@ -37,7 +37,7 @@ function PaperCard({ paper, score }) {
       {/* Keywords */}
       {paper.keywords && paper.keywords.length > 0 && (
         <div className="mb-3 flex flex-wrap gap-1.5">
-          {paper.keywords.map((kw) => (
+          {paper.keywords.slice(0, 5).map((kw) => (
             <span
               key={kw}
               className="rounded-full border border-gray-200 bg-gray-50 px-2.5 py-0.5 text-xs text-gray-600"
@@ -45,14 +45,29 @@ function PaperCard({ paper, score }) {
               {kw}
             </span>
           ))}
+          {paper.keywords.length > 5 && (
+            <span className="rounded-full bg-gray-50 px-2.5 py-0.5 text-xs text-gray-400">
+              +{paper.keywords.length - 5} more
+            </span>
+          )}
         </div>
       )}
 
-      {/* Footer: score badge + department */}
-      <div className="flex items-center gap-2">
+      {/* Footer: badges */}
+      <div className="flex flex-wrap items-center gap-2">
         {score > 0 && (
           <span className="rounded-full bg-blue-50 px-2.5 py-0.5 text-xs font-medium text-blue-700">
-            Relevance: {(score * 100).toFixed(1)}%
+            {(score * 100).toFixed(1)}% match
+          </span>
+        )}
+        {paper.paper_type && (
+          <span className="rounded-full bg-purple-50 px-2.5 py-0.5 text-xs font-medium text-purple-700">
+            {paper.paper_type}
+          </span>
+        )}
+        {paper.citation_count > 0 && (
+          <span className="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-medium text-amber-700">
+            {paper.citation_count} citations
           </span>
         )}
         {paper.department && (

@@ -1,7 +1,7 @@
-"""Paper endpoints — full CRUD, keyword search, filters, and pagination.
+"""Paper endpoints — full CRUD, hybrid search, filters, sorting, and pagination.
 
 All routes use dependency injection to access the database session.
-No JSON file is read — everything comes from PostgreSQL.
+Everything comes from PostgreSQL — no JSON files.
 """
 
 # pyrefly: ignore [missing-import]
@@ -23,21 +23,31 @@ from app.services.paper_service import (
     get_all_papers,
     get_paper_by_id,
     get_unique_departments,
+    get_unique_journals,
+    get_unique_paper_types,
     get_unique_schools,
     get_year_range,
-    search_papers_keyword,
     update_paper,
+)
+from app.services.search_service import (
+    SearchMode,
+    SortOrder,
+    hybrid_search,
 )
 
 router = APIRouter()
 
 
-# ── Keyword search (must be before /{paper_id} to avoid path conflict) ───────
+# ── Search (must be before /{paper_id} to avoid path conflict) ───────────────
 
 
 @router.get("/search", response_model=SearchResponse)
 async def search_papers(
     q: str = Query(..., min_length=1, description="Search query"),
+    mode: str = Query(
+        default="hybrid",
+        description="Search mode: hybrid, semantic, keyword",
+    ),
     page: int = Query(default=1, ge=1, description="Page number"),
     limit: int = Query(
         default=None,
@@ -45,17 +55,65 @@ async def search_papers(
         le=100,
         description="Results per page",
     ),
+    sort: str = Query(
+        default="relevance",
+        description="Sort: relevance, newest, oldest, citations_desc, impact_desc, alphabetical",
+    ),
+    department: str | None = Query(default=None, description="Filter by department"),
+    school: str | None = Query(default=None, description="Filter by school"),
+    year: int | None = Query(default=None, description="Filter by exact year"),
+    year_from: int | None = Query(default=None, description="Filter by year (from)"),
+    year_to: int | None = Query(default=None, description="Filter by year (to)"),
+    author: str | None = Query(default=None, description="Filter by author name"),
+    journal: str | None = Query(default=None, description="Filter by journal"),
+    conference: str | None = Query(default=None, description="Filter by conference"),
+    paper_type: str | None = Query(default=None, description="Filter by paper type"),
+    status: str | None = Query(default=None, description="Filter by status"),
+    citation_min: int | None = Query(default=None, description="Min citations"),
+    citation_max: int | None = Query(default=None, description="Max citations"),
+    impact_factor_min: float | None = Query(default=None, description="Min impact factor"),
     db: AsyncSession = Depends(get_db),
 ):
-    """Search papers by keyword across title, authors, journal, department, and keywords.
+    """Search papers using hybrid (keyword + semantic), semantic-only, or keyword-only.
 
-    Uses PostgreSQL ILIKE for case-insensitive pattern matching.
-    Results are ranked by how many fields match the query.
+    Default mode is hybrid: 60% semantic + 40% keyword relevance score.
+    Supports all filters, sorting, and pagination.
     """
     if limit is None:
-        limit = settings.default_page_size
+        limit = settings.default_search_limit
 
-    return await search_papers_keyword(db, q, page=page, limit=limit)
+    # Parse enums
+    try:
+        search_mode = SearchMode(mode)
+    except ValueError:
+        search_mode = SearchMode.HYBRID
+
+    try:
+        sort_order = SortOrder(sort)
+    except ValueError:
+        sort_order = SortOrder.RELEVANCE
+
+    return await hybrid_search(
+        db,
+        q,
+        mode=search_mode,
+        page=page,
+        limit=limit,
+        sort=sort_order,
+        department=department,
+        school=school,
+        year=year,
+        year_from=year_from,
+        year_to=year_to,
+        author=author,
+        journal=journal,
+        conference=conference,
+        paper_type=paper_type,
+        status=status,
+        citation_min=citation_min,
+        citation_max=citation_max,
+        impact_factor_min=impact_factor_min,
+    )
 
 
 # ── Metadata endpoints ───────────────────────────────────────────────────────
@@ -73,6 +131,18 @@ async def list_schools(db: AsyncSession = Depends(get_db)):
     return await get_unique_schools(db)
 
 
+@router.get("/meta/journals", response_model=list[str])
+async def list_journals(db: AsyncSession = Depends(get_db)):
+    """Return a sorted list of unique journal names for filter dropdowns."""
+    return await get_unique_journals(db)
+
+
+@router.get("/meta/paper-types", response_model=list[str])
+async def list_paper_types(db: AsyncSession = Depends(get_db)):
+    """Return a sorted list of unique paper types."""
+    return await get_unique_paper_types(db)
+
+
 @router.get("/meta/years")
 async def list_year_range(db: AsyncSession = Depends(get_db)):
     """Return the min and max publication years in the dataset."""
@@ -87,6 +157,10 @@ async def list_papers(
     department: str | None = Query(default=None, description="Filter by department"),
     school: str | None = Query(default=None, description="Filter by school"),
     year: int | None = Query(default=None, description="Filter by publication year"),
+    sort: str = Query(
+        default="newest",
+        description="Sort: newest, oldest, citations_desc, impact_desc, alphabetical",
+    ),
     page: int = Query(default=1, ge=1, description="Page number"),
     limit: int = Query(
         default=None,
@@ -96,7 +170,7 @@ async def list_papers(
     ),
     db: AsyncSession = Depends(get_db),
 ):
-    """Return all papers with optional filters and pagination."""
+    """Return all papers with optional filters, sorting, and pagination."""
     if limit is None:
         limit = settings.default_page_size
 
@@ -107,6 +181,7 @@ async def list_papers(
         department=department,
         school=school,
         year=year,
+        sort=sort,
     )
 
 

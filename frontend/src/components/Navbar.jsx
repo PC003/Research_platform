@@ -28,16 +28,14 @@ function Navbar() {
             to="/"
             className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600"
           >
-            Home
+            Papers
           </Link>
-          <a
-            href="https://github.com"
-            target="_blank"
-            rel="noopener noreferrer"
+          <Link
+            to="/students"
             className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600"
           >
-            GitHub
-          </a>
+            Students
+          </Link>
         </div>
       </div>
     </nav>

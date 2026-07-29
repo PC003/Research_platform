@@ -1,10 +1,45 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 function SearchBar({ onSearch, isLoading = false }) {
   const [query, setQuery] = useState('');
+  const debounceRef = useRef(null);
+
+  // Debounced search on keystroke
+  const handleChange = useCallback(
+    (e) => {
+      const value = e.target.value;
+      setQuery(value);
+
+      // Clear previous debounce
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+
+      // Debounce 300ms
+      const trimmed = value.trim();
+      if (trimmed.length >= 2) {
+        debounceRef.current = setTimeout(() => {
+          onSearch(trimmed);
+        }, 300);
+      }
+    },
+    [onSearch]
+  );
+
+  // Cleanup on unmount
+  useEffect(() => {
+    return () => {
+      if (debounceRef.current) {
+        clearTimeout(debounceRef.current);
+      }
+    };
+  }, []);
 
   function handleSubmit(e) {
     e.preventDefault();
+    if (debounceRef.current) {
+      clearTimeout(debounceRef.current);
+    }
     const trimmed = query.trim();
     if (trimmed && onSearch) {
       onSearch(trimmed);
@@ -34,7 +69,7 @@ function SearchBar({ onSearch, isLoading = false }) {
           id="search-input"
           type="text"
           value={query}
-          onChange={(e) => setQuery(e.target.value)}
+          onChange={handleChange}
           placeholder="Search research papers by topic, title, or abstract..."
           className="w-full rounded-lg border border-gray-300 bg-white py-3 pl-12 pr-28 text-sm text-gray-900 placeholder-gray-400 shadow-sm transition-shadow focus:border-blue-500 focus:outline-none focus:ring-2 focus:ring-blue-500/20"
         />

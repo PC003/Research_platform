@@ -15,18 +15,23 @@ class Settings(BaseSettings):
 
     # Application metadata
     app_name: str = "UG Research Discovery Platform"
-    app_version: str = "0.2.0"
+    app_version: str = "1.0.0"
     api_prefix: str = "/api/v1"
-
-    # Data paths (kept for the import script to locate papers.json)
-    data_dir: str = str(_BACKEND_DIR.parent / "data")
 
     # Database — required for the application to start
     database_url: str
 
+    # Embedding model identifier
+    embedding_model: str = "sentence-transformers/all-MiniLM-L6-v2"
+
     # Pagination defaults
     default_page_size: int = 20
     max_page_size: int = 100
+
+    # Search defaults
+    semantic_weight: float = 0.6
+    keyword_weight: float = 0.4
+    default_search_limit: int = 20
 
     # CORS origins allowed to call the API
     cors_origins: list[str] = ["http://localhost:5173"]

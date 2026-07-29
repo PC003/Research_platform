@@ -18,8 +18,11 @@ dist/
 .env.test.local
 .env.production.local
 
-# FAISS
-data/faiss_index/*.index
+# Legacy data (archived)
+data/_legacy/
+
+# Alembic
+alembic/versions/__pycache__/
 
 # IDE
 .vscode/

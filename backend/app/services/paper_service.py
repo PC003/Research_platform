@@ -3,11 +3,13 @@
 All functions accept an AsyncSession and return Pydantic models.
 The ORM-to-Pydantic mapping handles the field name differences
 (e.g. paper_title → title, publication_year → year).
+
+Search functionality has been moved to search_service.py.
 """
 
 import math
 
-from sqlalchemy import func, or_, select, text
+from sqlalchemy import func, select, text
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.models.paper import (
@@ -16,8 +18,6 @@ from app.models.paper import (
     PaperCreate,
     PaperSummary,
     PaperUpdate,
-    SearchResponse,
-    SearchResult,
 )
 from app.models.paper_orm import PaperORM
 
@@ -58,27 +58,6 @@ def _orm_to_paper(row: PaperORM) -> Paper:
         search_text=row.search_text,
         created_at=row.created_at,
         updated_at=row.updated_at,
-    )
-
-
-def _orm_to_summary(row: PaperORM) -> PaperSummary:
-    """Convert a PaperORM instance to a lightweight PaperSummary."""
-    abstract_text = row.abstract or ""
-    abstract_preview = (
-        abstract_text[:200] + "..." if len(abstract_text) > 200 else abstract_text
-    )
-    return PaperSummary(
-        id=row.id,
-        title=row.paper_title,
-        authors=row.authors or [],
-        department=row.department or "",
-        year=row.publication_year or 0,
-        journal=row.journal_name or "",
-        keywords=row.keywords or [],
-        abstract=abstract_preview,
-        school=row.school,
-        paper_type=row.paper_type,
-        citation_count=row.citation_count or 0,
     )
 
 
@@ -176,8 +155,9 @@ async def get_all_papers(
     department: str | None = None,
     school: str | None = None,
     year: int | None = None,
+    sort: str = "newest",
 ) -> PaginatedResponse[Paper]:
-    """Return papers with optional filters and pagination."""
+    """Return papers with optional filters, sorting, and pagination."""
     stmt = select(PaperORM)
 
     # Apply filters
@@ -196,9 +176,23 @@ async def get_all_papers(
     count_stmt = select(func.count()).select_from(stmt.subquery())
     total = (await db.execute(count_stmt)).scalar_one()
 
+    # Apply sorting
+    if sort == "newest":
+        stmt = stmt.order_by(PaperORM.publication_year.desc().nullslast(), PaperORM.id.desc())
+    elif sort == "oldest":
+        stmt = stmt.order_by(PaperORM.publication_year.asc().nullsfirst(), PaperORM.id.asc())
+    elif sort == "citations_desc":
+        stmt = stmt.order_by(PaperORM.citation_count.desc().nullslast(), PaperORM.id.desc())
+    elif sort == "impact_desc":
+        stmt = stmt.order_by(PaperORM.impact_factor.desc().nullslast(), PaperORM.id.desc())
+    elif sort == "alphabetical":
+        stmt = stmt.order_by(PaperORM.paper_title.asc())
+    else:
+        stmt = stmt.order_by(PaperORM.id.desc())
+
     # Apply pagination
     offset = (page - 1) * limit
-    stmt = stmt.order_by(PaperORM.id).offset(offset).limit(limit)
+    stmt = stmt.offset(offset).limit(limit)
 
     result = await db.execute(stmt)
     rows = result.scalars().all()
@@ -265,94 +259,6 @@ async def delete_paper(db: AsyncSession, paper_id: int) -> bool:
     return True
 
 
-# ── Keyword search ────────────────────────────────────────────────────────────
-
-
-async def search_papers_keyword(
-    db: AsyncSession,
-    query: str,
-    *,
-    page: int = 1,
-    limit: int = 20,
-) -> SearchResponse:
-    """Search papers using ILIKE across multiple fields.
-
-    Searches: title, abstract, department, journal_name,
-    and the text representation of authors and keywords arrays.
-    """
-    search_term = f"%{query}%"
-
-    conditions = [
-        PaperORM.paper_title.ilike(search_term),
-        PaperORM.abstract.ilike(search_term),
-        PaperORM.department.ilike(search_term),
-        PaperORM.journal_name.ilike(search_term),
-        # Cast array columns to text for ILIKE search
-        func.array_to_string(PaperORM.authors, " ").ilike(search_term),
-        func.array_to_string(PaperORM.keywords, " ").ilike(search_term),
-    ]
-
-    stmt = select(PaperORM).where(or_(*conditions))
-
-    # Count total matches
-    count_stmt = select(func.count()).select_from(stmt.subquery())
-    total = (await db.execute(count_stmt)).scalar_one()
-
-    # Paginate results
-    offset = (page - 1) * limit
-    stmt = stmt.order_by(PaperORM.id).offset(offset).limit(limit)
-
-    result = await db.execute(stmt)
-    rows = result.scalars().all()
-
-    # Build search results with a simple relevance score
-    # based on how many fields match (normalized to 0–1)
-    search_results = []
-    for row in rows:
-        match_count = _count_field_matches(row, query)
-        score = min(1.0, match_count / 3.0)
-        search_results.append(
-            SearchResult(
-                paper=_orm_to_summary(row),
-                score=round(score, 3),
-            )
-        )
-
-    # Sort by score descending
-    search_results.sort(key=lambda r: r.score, reverse=True)
-
-    return SearchResponse(
-        query=query,
-        total=total,
-        results=search_results,
-    )
-
-
-def _count_field_matches(row: PaperORM, query: str) -> int:
-    """Count how many searchable fields contain the query string."""
-    query_lower = query.lower()
-    count = 0
-
-    if row.paper_title and query_lower in row.paper_title.lower():
-        count += 2  # Title match weighted higher
-    if row.abstract and query_lower in row.abstract.lower():
-        count += 1
-    if row.department and query_lower in row.department.lower():
-        count += 1
-    if row.journal_name and query_lower in row.journal_name.lower():
-        count += 1
-    if row.authors:
-        authors_text = " ".join(row.authors).lower()
-        if query_lower in authors_text:
-            count += 1
-    if row.keywords:
-        keywords_text = " ".join(row.keywords).lower()
-        if query_lower in keywords_text:
-            count += 1
-
-    return count
-
-
 # ── Metadata queries ──────────────────────────────────────────────────────────
 
 
@@ -377,6 +283,32 @@ async def get_unique_schools(db: AsyncSession) -> list[str]:
         .where(PaperORM.school != "")
         .distinct()
         .order_by(PaperORM.school)
+    )
+    result = await db.execute(stmt)
+    return [row[0] for row in result.all()]
+
+
+async def get_unique_journals(db: AsyncSession) -> list[str]:
+    """Return a sorted list of unique journal names."""
+    stmt = (
+        select(PaperORM.journal_name)
+        .where(PaperORM.journal_name.isnot(None))
+        .where(PaperORM.journal_name != "")
+        .distinct()
+        .order_by(PaperORM.journal_name)
+    )
+    result = await db.execute(stmt)
+    return [row[0] for row in result.all()]
+
+
+async def get_unique_paper_types(db: AsyncSession) -> list[str]:
+    """Return a sorted list of unique paper types."""
+    stmt = (
+        select(PaperORM.paper_type)
+        .where(PaperORM.paper_type.isnot(None))
+        .where(PaperORM.paper_type != "")
+        .distinct()
+        .order_by(PaperORM.paper_type)
     )
     result = await db.execute(stmt)
     return [row[0] for row in result.all()]

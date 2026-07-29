@@ -11,7 +11,7 @@ from fastapi import FastAPI
 # pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import health, papers
+from app.api.routes import analytics, health, papers, students
 from app.config import settings
 from app.core.database import close_engine, init_db
 
@@ -55,6 +55,16 @@ def create_app() -> FastAPI:
         papers.router,
         prefix=f"{settings.api_prefix}/papers",
         tags=["papers"],
+    )
+    application.include_router(
+        students.router,
+        prefix=f"{settings.api_prefix}/students",
+        tags=["students"],
+    )
+    application.include_router(
+        analytics.router,
+        prefix=f"{settings.api_prefix}/analytics",
+        tags=["analytics"],
     )
     application.include_router(
         health.router,

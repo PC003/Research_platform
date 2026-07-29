@@ -23,6 +23,7 @@ _engine = create_async_engine(
     echo=False,
     pool_size=5,
     max_overflow=10,
+    pool_pre_ping=True,
 )
 
 _async_session_factory = async_sessionmaker(
@@ -55,13 +56,14 @@ async def get_db() -> AsyncGenerator[AsyncSession, None]:
 async def init_db() -> None:
     """Create all tables from ORM metadata (dev convenience).
 
-    In production, use the SQL migration files instead.
+    In production, use Alembic migrations instead.
     Imports all ORM models so their tables are registered
     on Base.metadata before create_all runs.
     """
     # Import ORM models to register them on Base.metadata
     import app.models.student  # noqa: F401
     import app.models.paper_orm  # noqa: F401
+    import app.models.paper_embedding  # noqa: F401
 
     async with _engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

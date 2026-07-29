@@ -8,10 +8,34 @@ The service layer handles the mapping between the two.
 
 from datetime import date, datetime
 from decimal import Decimal
+from enum import Enum
 from typing import Generic, TypeVar
 
 # pyrefly: ignore [missing-import]
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, field_validator
+
+
+# ── Enums ─────────────────────────────────────────────────────────────────────
+
+
+class PaperType(str, Enum):
+    JOURNAL = "Journal"
+    CONFERENCE = "Conference"
+    PATENT = "Patent"
+    BOOK_CHAPTER = "Book Chapter"
+
+
+class CollaborationType(str, Enum):
+    INDIVIDUAL = "Individual"
+    NATIONAL = "National"
+    INTERNATIONAL = "International"
+
+
+class PaperStatus(str, Enum):
+    PUBLISHED = "Published"
+    UNDER_REVIEW = "Under Review"
+    ACCEPTED = "Accepted"
+    PREPRINT = "Preprint"
 
 
 # ── Generic pagination wrapper ────────────────────────────────────────────────
@@ -26,12 +50,6 @@ class PaginatedResponse(BaseModel, Generic[T]):
     total: int = Field(description="Total number of records matching the query")
     page: int = Field(description="Current page number (1-indexed)")
     pages: int = Field(description="Total number of pages")
-
-
-# ── Paper type constants ──────────────────────────────────────────────────────
-
-PAPER_TYPES = ("Journal", "Conference", "Patent", "Book Chapter")
-COLLABORATION_TYPES = ("Individual", "National", "International")
 
 
 # ── Response schemas ──────────────────────────────────────────────────────────
@@ -106,16 +124,48 @@ class PaperCreate(BaseModel):
     publication_date: date | None = None
     journal: str = ""
     conference_name: str | None = None
-    paper_type: str | None = None
+    paper_type: str | None = Field(
+        default=None,
+        description="Journal, Conference, Patent, or Book Chapter",
+    )
     doi: str | None = None
     paper_link: str | None = None
     pdf_url: str = ""
     photo_url: str | None = None
     citation_count: int = 0
     impact_factor: Decimal | None = None
-    collaboration_type: str | None = None
+    collaboration_type: str | None = Field(
+        default=None,
+        description="Individual, National, or International",
+    )
     status: str = "Published"
     student_id: str | None = None
+
+    @field_validator("paper_type")
+    @classmethod
+    def validate_paper_type(cls, v):
+        if v is not None:
+            valid = [e.value for e in PaperType]
+            if v not in valid:
+                raise ValueError(f"paper_type must be one of {valid}")
+        return v
+
+    @field_validator("collaboration_type")
+    @classmethod
+    def validate_collaboration_type(cls, v):
+        if v is not None:
+            valid = [e.value for e in CollaborationType]
+            if v not in valid:
+                raise ValueError(f"collaboration_type must be one of {valid}")
+        return v
+
+    @field_validator("doi")
+    @classmethod
+    def validate_doi(cls, v):
+        if v is not None and v != "":
+            if not v.startswith("10."):
+                raise ValueError("DOI must start with '10.'")
+        return v
 
 
 class PaperUpdate(BaseModel):
@@ -146,7 +196,7 @@ class PaperUpdate(BaseModel):
     student_id: str | None = None
 
 
-# ── Legacy search schemas (kept for forward compatibility) ────────────────────
+# ── Search schemas ────────────────────────────────────────────────────────────
 
 
 class SearchResult(BaseModel):
@@ -166,3 +216,4 @@ class SearchResponse(BaseModel):
     query: str
     total: int
     results: list[SearchResult]
+    search_mode: str = "hybrid"
