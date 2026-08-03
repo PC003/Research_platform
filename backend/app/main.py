@@ -8,10 +8,11 @@ from contextlib import asynccontextmanager
 
 # pyrefly: ignore [missing-import]
 from fastapi import FastAPI
-# pyrefly: ignore [missing-import]
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from pathlib import Path
 
-from app.api.routes import analytics, health, papers, students
+from app.api.routes import analytics, health, papers, students, images, admin_students
 from app.config import settings
 from app.core.database import close_engine, init_db
 
@@ -71,6 +72,20 @@ def create_app() -> FastAPI:
         prefix="/health",
         tags=["health"],
     )
+    application.include_router(
+        images.router,
+        prefix=f"{settings.api_prefix}/admin",
+    )
+    application.include_router(
+        admin_students.router,
+        prefix=f"{settings.api_prefix}/admin",
+    )
+
+    # Mount static files for generated images
+    base_dir = Path(__file__).resolve().parent.parent
+    public_dir = base_dir / "public"
+    public_dir.mkdir(exist_ok=True)
+    application.mount("/public", StaticFiles(directory=str(public_dir)), name="public")
 
     return application
 

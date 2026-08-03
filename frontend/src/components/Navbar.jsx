@@ -36,6 +36,12 @@ function Navbar() {
           >
             Students
           </Link>
+          <Link
+            to="/admin/images"
+            className="text-sm font-medium text-gray-600 transition-colors hover:text-blue-600"
+          >
+            Admin Dashboard
+          </Link>
         </div>
       </div>
     </nav>

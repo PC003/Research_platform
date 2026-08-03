@@ -64,6 +64,7 @@ async def init_db() -> None:
     import app.models.student  # noqa: F401
     import app.models.paper_orm  # noqa: F401
     import app.models.paper_embedding  # noqa: F401
+    import app.models.generated_images  # noqa: F401
 
     async with _engine.begin() as conn:
         await conn.run_sync(Base.metadata.create_all)

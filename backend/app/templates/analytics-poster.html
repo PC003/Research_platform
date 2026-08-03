@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Analytics Summary</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    :root {
+      --vit-navy: #0F204B;
+      --vit-gold: #F2A900;
+      --vit-teal: #008080;
+      --bg-color: #F8FAFC;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      width: 1920px;
+      height: 1080px;
+      font-family: 'Inter', -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      display: flex;
+      flex-direction: column;
+      box-sizing: border-box;
+    }
+    .header {
+      background-color: var(--vit-navy);
+      color: white;
+      padding: 30px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 5px solid var(--vit-gold);
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 42px;
+      font-weight: 700;
+    }
+    .header h2 {
+      margin: 10px 0 0 0;
+      font-size: 24px;
+      color: #E2E8F0;
+      font-weight: 400;
+    }
+    .logo-placeholder {
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--vit-gold);
+    }
+    .main-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 40px;
+      padding: 40px 60px;
+      flex: 1;
+    }
+    .kpi-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .kpi-card {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      border-left: 6px solid var(--vit-navy);
+    }
+    .kpi-card.highlight {
+      background: var(--vit-navy);
+      color: white;
+      border-left: none;
+    }
+    .kpi-label {
+      font-size: 16px;
+      font-weight: 600;
+      color: #64748B;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .kpi-card.highlight .kpi-label {
+      color: #CBD5E1;
+    }
+    .kpi-value {
+      font-size: 48px;
+      font-weight: 800;
+      margin-top: 8px;
+    }
+    .kpi-card.highlight .kpi-value {
+      color: var(--vit-gold);
+    }
+    .charts-area {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 30px;
+    }
+    .chart-container {
+      background: white;
+      border-radius: 12px;
+      padding: 24px;
+      box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+      display: flex;
+      flex-direction: column;
+    }
+    .chart-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--vit-navy);
+      margin-bottom: 20px;
+    }
+    canvas {
+      flex: 1;
+      width: 100% !important;
+      height: 100% !important;
+    }
+    .footer {
+      background: white;
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      color: #64748B;
+      font-size: 14px;
+      border-top: 1px solid #E2E8F0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div>
+      <h1>UG Research Publication Summary</h1>
+      <h2>{{ month }} {{ year }}</h2>
+    </div>
+    <div class="logo-placeholder">VIT</div>
+  </div>
+
+  <div class="main-grid">
+    <div class="kpi-sidebar">
+      <div class="kpi-card highlight">
+        <div class="kpi-label">Total Publications</div>
+        <div class="kpi-value">{{ total_publications }}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Students Involved</div>
+        <div class="kpi-value">{{ total_students }}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Avg Impact Factor</div>
+        <div class="kpi-value">{{ avg_impact_factor }}</div>
+      </div>
+      <div class="kpi-card">
+        <div class="kpi-label">Max Impact Factor</div>
+        <div class="kpi-value">{{ max_impact_factor }}</div>
+      </div>
+    </div>
+
+    <div class="charts-area">
+      <div class="chart-container">
+        <div class="chart-title">Publication Output</div>
+        <canvas id="typeChart"></canvas>
+      </div>
+      <div class="chart-container">
+        <div class="chart-title">Quartile Distribution</div>
+        <canvas id="quartileChart"></canvas>
+      </div>
+      <div class="chart-container" style="grid-column: span 2;">
+        <div class="chart-title">School-wise Publications</div>
+        <canvas id="schoolChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div>Office of Academic Research / UG Research Cell</div>
+    <div>Generated automatically via UG Research Platform</div>
+  </div>
+
+  <script>
+    // Disable Chart.js animations globally for reliable headless rendering
+    Chart.defaults.animation = false;
+    
+    // Type Donut Chart
+    new Chart(document.getElementById('typeChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Journals', 'Conferences', 'Book Chapters'],
+        datasets: [{
+          data: [{{ journal_count }}, {{ conference_count }}, {{ book_chapter_count }}],
+          backgroundColor: ['#0F204B', '#F2A900', '#008080']
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { position: 'right' } }
+      }
+    });
+
+    // Quartile Bar Chart
+    new Chart(document.getElementById('quartileChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Q1', 'Q2', 'Q3', 'Q4'],
+        datasets: [{
+          label: 'Number of Papers',
+          data: [{{ q1_count }}, {{ q2_count }}, {{ q3_count }}, {{ q4_count }}],
+          backgroundColor: '#0F204B'
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        plugins: { legend: { display: false } },
+        scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+      }
+    });
+
+    // School Grouped Bar Chart
+    const schoolLabels = {{ school_labels | tojson }};
+    const schoolPubs = {{ school_pubs | tojson }};
+    const schoolStudents = {{ school_students | tojson }};
+
+    new Chart(document.getElementById('schoolChart'), {
+      type: 'bar',
+      data: {
+        labels: schoolLabels,
+        datasets: [
+          {
+            label: 'Publications',
+            data: schoolPubs,
+            backgroundColor: '#0F204B'
+          },
+          {
+            label: 'Students Involved',
+            data: schoolStudents,
+            backgroundColor: '#F2A900'
+          }
+        ]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: { y: { beginAtZero: true, ticks: { stepSize: 1 } } }
+      }
+    });
+  </script>
+</body>
+</html>

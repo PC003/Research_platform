@@ -24,6 +24,8 @@ class Student(Base):
     profile_photo: Mapped[str | None] = mapped_column(
         Text, comment="Cloudinary / S3 URL",
     )
+    photo_url: Mapped[str | None] = mapped_column(Text)
+    photo_public_id: Mapped[str | None] = mapped_column(Text)
     linkedin_url: Mapped[str | None] = mapped_column(Text)
     github_url: Mapped[str | None] = mapped_column(Text)
     created_at: Mapped[datetime] = mapped_column(

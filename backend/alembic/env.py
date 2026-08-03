@@ -18,6 +18,7 @@ from app.models.base import Base
 import app.models.student  # noqa: F401
 import app.models.paper_orm  # noqa: F401
 import app.models.paper_embedding  # noqa: F401
+import app.models.generated_images  # noqa: F401
 
 
 # Alembic Config object
