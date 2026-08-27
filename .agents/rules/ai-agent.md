@@ -1,7 +1,6 @@
 ---
-trigger: always_on
+trigger: manual
 ---
-
 
 For this project, it's actually a good idea to give Antigravity strict rules. Otherwise, AI coding tools tend to over-engineer the project by adding authentication, dashboards, unnecessary UI libraries, and features you don't need yet.
 
@@ -291,4 +290,4 @@ Since this project is intended to become a research platform, structure your dev
 | **Phase 5** | Personalized recommendations and collaboration features                 | Planned    |
 | **Phase 6** | Production deployment with PostgreSQL, Docker, and cloud infrastructure | Planned    |
 
-This phased approach keeps the prototype focused while ensuring the architecture remains suitable for the full AI-powered research platform you described previously. 
+This phased approach keeps the prototype focused while ensuring the architecture remains suitable for the full AI-powered research platform you described previously.

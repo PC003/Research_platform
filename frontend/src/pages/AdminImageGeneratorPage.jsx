@@ -10,8 +10,7 @@ function AdminImageGeneratorPage() {
   const [year, setYear] = useState('2026');
   
   // Student Form State
-  const [achievementType, setAchievementType] = useState('journal_publication');
-  const [studentIds, setStudentIds] = useState('');
+  const [achievementType, setAchievementType] = useState('journal_publications');
   
   // Status
   const [isGenerating, setIsGenerating] = useState(false);
@@ -37,8 +36,6 @@ function AdminImageGeneratorPage() {
       
       if (activeTab === 'student') {
         payload.achievementType = achievementType;
-        // split by comma and trim
-        payload.studentIds = studentIds.split(',').map(id => id.trim()).filter(id => id.length > 0);
       }
       
       const response = await fetch(endpoint, {
@@ -126,18 +123,6 @@ function AdminImageGeneratorPage() {
                     <option value="patents_filed">Patents Filed</option>
                     <option value="research_awards">Research Awards</option>
                   </select>
-                </div>
-                <div>
-                  <label className="mb-1.5 block text-sm font-medium text-gray-700">Student IDs (comma separated)</label>
-                  <input 
-                    type="text" 
-                    value={studentIds} 
-                    onChange={e => setStudentIds(e.target.value)}
-                    placeholder="e.g. 24BCE1234, 23BCE9999"
-                    className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-blue-500 focus:outline-none"
-                    required
-                  />
-                  <p className="mt-1 text-xs text-gray-500">Ensure these students exist in the database.</p>
                 </div>
               </>
             )}

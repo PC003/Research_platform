@@ -3,7 +3,7 @@
 from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
 from sqlalchemy.ext.asyncio import AsyncSession
-from sqlalchemy import select, func, distinct
+from sqlalchemy import select, func, distinct, extract
 import logging
 
 from app.core.database import get_db
@@ -25,7 +25,6 @@ class StudentRecognitionRequest(BaseModel):
     month: str
     year: int
     achievementType: str
-    studentIds: list[str]
     format: str = "png"
 
 @router.post("/analytics-summary")
@@ -90,8 +89,35 @@ async def generate_analytics_summary(req: AnalyticsSummaryRequest, db: AsyncSess
 async def generate_student_recognition(req: StudentRecognitionRequest, db: AsyncSession = Depends(get_db)):
     """Generate the student recognition poster."""
     try:
-        # Fetch students
-        result = await db.execute(select(Student).where(Student.student_id.in_(req.studentIds)))
+        # Map achievement type to paper type
+        achievement_map = {
+            "journal_publications": "Journal",
+            "conference_presentations": "Conference",
+            "patents_filed": "Patent",
+            "research_awards": "Award"
+        }
+        paper_type = achievement_map.get(req.achievementType, "Journal")
+        
+        month_map = {
+            "January": 1, "February": 2, "March": 3, "April": 4,
+            "May": 5, "June": 6, "July": 7, "August": 8,
+            "September": 9, "October": 10, "November": 11, "December": 12
+        }
+        month_int = month_map.get(req.month, 1)
+
+        # Get students who published in that month/year
+        stmt = (
+            select(Student)
+            .join(PaperORM, Student.student_id == PaperORM.student_id)
+            .where(
+                PaperORM.publication_year == req.year,
+                extract('month', PaperORM.publication_date) == month_int,
+                PaperORM.paper_type == paper_type
+            )
+            .distinct()
+            .limit(36)
+        )
+        result = await db.execute(stmt)
         students = result.scalars().all()
         
         if not students:
@@ -108,11 +134,19 @@ async def generate_student_recognition(req: StudentRecognitionRequest, db: Async
         # Format title
         display_title = req.achievementType.replace("_", " ").title()
         
+        # Fetch global counts for the month/year
+        j_count = await db.scalar(select(func.count(PaperORM.id)).where(PaperORM.publication_year == req.year, extract('month', PaperORM.publication_date) == month_int, PaperORM.paper_type == "Journal"))
+        c_count = await db.scalar(select(func.count(PaperORM.id)).where(PaperORM.publication_year == req.year, extract('month', PaperORM.publication_date) == month_int, PaperORM.paper_type == "Conference"))
+        p_count = await db.scalar(select(func.count(PaperORM.id)).where(PaperORM.publication_year == req.year, extract('month', PaperORM.publication_date) == month_int, PaperORM.paper_type == "Patent"))
+        
         data = {
             "month": req.month,
             "year": req.year,
             "achievement_type_display": display_title,
-            "students": student_data
+            "students": student_data,
+            "journal_count": j_count or 0,
+            "conference_count": c_count or 0,
+            "patent_count": p_count or 0
         }
         
         image_bytes = await image_service.generate_student_poster(data)
@@ -129,7 +163,11 @@ async def generate_student_recognition(req: StudentRecognitionRequest, db: Async
         await db.commit()
         
         return {"success": True, "imageUrl": image_url}
+    except HTTPException:
+        raise
     except Exception as e:
+        if isinstance(e, HTTPException):
+            raise
         logger.error(f"Failed to generate student poster: {e}")
         raise HTTPException(status_code=500, detail="Failed to generate image")
 
