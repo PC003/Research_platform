@@ -12,7 +12,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
 from pathlib import Path
 
-from app.api.routes import analytics, health, papers, students, images, admin_students
+from app.api.routes import analytics, auth, health, papers, students, images, admin_students
 from app.config import settings
 from app.core.database import close_engine, init_db
 
@@ -52,6 +52,11 @@ def create_app() -> FastAPI:
     )
 
     # ── Routers ───────────────────────────────────────────────────────────
+    application.include_router(
+        auth.router,
+        prefix=f"{settings.api_prefix}/auth",
+        tags=["auth"],
+    )
     application.include_router(
         papers.router,
         prefix=f"{settings.api_prefix}/papers",

@@ -7,6 +7,15 @@ const apiClient = axios.create({
   headers: { 'Content-Type': 'application/json' },
 });
 
+// Attach JWT token to every request if available
+apiClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem('research_platform_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 /**
  * Fetch all students with optional filters and pagination.
  */

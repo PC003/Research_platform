@@ -5,6 +5,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select
 import logging
 
+from app.core.auth import require_admin
 from app.core.database import get_db
 from app.models.student import Student
 from app.services.storage_service import storage_service
@@ -16,7 +17,8 @@ logger = logging.getLogger(__name__)
 async def upload_student_photo(
     student_id: str, 
     file: UploadFile = File(...),
-    db: AsyncSession = Depends(get_db)
+    db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Upload a photo for a student."""
     try:

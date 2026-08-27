@@ -9,6 +9,15 @@ const apiClient = axios.create({
   },
 });
 
+// Attach JWT token to every request if available
+apiClient.interceptors.request.use((config) => {
+  const token = localStorage.getItem('research_platform_token');
+  if (token) {
+    config.headers.Authorization = `Bearer ${token}`;
+  }
+  return config;
+});
+
 /**
  * Fetch all papers with optional filters, sorting, and pagination.
  */

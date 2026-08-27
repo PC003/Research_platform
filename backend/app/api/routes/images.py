@@ -6,6 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy import select, func, distinct, extract
 import logging
 
+from app.core.auth import require_admin
 from app.core.database import get_db
 from app.models.paper_orm import PaperORM
 from app.models.student import Student
@@ -28,7 +29,7 @@ class StudentRecognitionRequest(BaseModel):
     format: str = "png"
 
 @router.post("/analytics-summary")
-async def generate_analytics_summary(req: AnalyticsSummaryRequest, db: AsyncSession = Depends(get_db)):
+async def generate_analytics_summary(req: AnalyticsSummaryRequest, db: AsyncSession = Depends(get_db), _admin=Depends(require_admin)):
     """Generate the analytics summary dashboard."""
     try:
         # NOTE: For a real production app, we would filter by month/year.
@@ -86,7 +87,7 @@ async def generate_analytics_summary(req: AnalyticsSummaryRequest, db: AsyncSess
         raise HTTPException(status_code=500, detail="Failed to generate image")
 
 @router.post("/student-recognition")
-async def generate_student_recognition(req: StudentRecognitionRequest, db: AsyncSession = Depends(get_db)):
+async def generate_student_recognition(req: StudentRecognitionRequest, db: AsyncSession = Depends(get_db), _admin=Depends(require_admin)):
     """Generate the student recognition poster."""
     try:
         # Map achievement type to paper type
@@ -172,7 +173,7 @@ async def generate_student_recognition(req: StudentRecognitionRequest, db: Async
         raise HTTPException(status_code=500, detail="Failed to generate image")
 
 @router.get("/")
-async def list_generated_images(db: AsyncSession = Depends(get_db)):
+async def list_generated_images(db: AsyncSession = Depends(get_db), _admin=Depends(require_admin)):
     """List history of generated images."""
     result = await db.execute(select(GeneratedImage).order_by(GeneratedImage.created_at.desc()))
     images = result.scalars().all()

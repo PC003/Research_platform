@@ -8,6 +8,7 @@ from fastapi import APIRouter, Depends, HTTPException, Query
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.config import settings
+from app.core.auth import require_admin
 from app.core.database import get_db
 from app.models.paper import PaginatedResponse, Paper
 from app.models.student_schema import (
@@ -39,6 +40,7 @@ async def search_students_endpoint(
     page: int = Query(default=1, ge=1),
     limit: int = Query(default=None, ge=1, le=100),
     db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Search students by name, department, email, or student ID."""
     if limit is None:
@@ -50,13 +52,13 @@ async def search_students_endpoint(
 
 
 @router.get("/meta/departments", response_model=list[str])
-async def list_student_departments(db: AsyncSession = Depends(get_db)):
+async def list_student_departments(db: AsyncSession = Depends(get_db), _admin=Depends(require_admin)):
     """Return unique student departments for filter dropdowns."""
     return await get_unique_student_departments(db)
 
 
 @router.get("/meta/batches", response_model=list[str])
-async def list_batches(db: AsyncSession = Depends(get_db)):
+async def list_batches(db: AsyncSession = Depends(get_db), _admin=Depends(require_admin)):
     """Return unique batch values for filter dropdowns."""
     return await get_unique_batches(db)
 
@@ -72,6 +74,7 @@ async def list_students(
     page: int = Query(default=1, ge=1, description="Page number"),
     limit: int = Query(default=None, ge=1, le=100, description="Students per page"),
     db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Return all students with optional filters and pagination."""
     if limit is None:
@@ -86,7 +89,7 @@ async def list_students(
 
 
 @router.get("/{student_id}", response_model=StudentResponse)
-async def get_student(student_id: str, db: AsyncSession = Depends(get_db)):
+async def get_student(student_id: str, db: AsyncSession = Depends(get_db), _admin=Depends(require_admin)):
     """Return a single student by ID, or 404."""
     student = await get_student_by_id(db, student_id)
     if student is None:
@@ -100,6 +103,7 @@ async def get_papers_by_student(
     page: int = Query(default=1, ge=1),
     limit: int = Query(default=None, ge=1, le=100),
     db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Return papers by a specific student."""
     if limit is None:
@@ -117,6 +121,7 @@ async def get_papers_by_student(
 async def create_new_student(
     data: StudentCreate,
     db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Create a new student profile."""
     return await create_student(db, data)
@@ -127,6 +132,7 @@ async def update_existing_student(
     student_id: str,
     data: StudentUpdate,
     db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Update a student profile. Returns 404 if not found."""
     student = await update_student(db, student_id, data)
@@ -139,6 +145,7 @@ async def update_existing_student(
 async def delete_existing_student(
     student_id: str,
     db: AsyncSession = Depends(get_db),
+    _admin=Depends(require_admin),
 ):
     """Delete a student. Returns 204 on success, 404 if not found."""
     deleted = await delete_student(db, student_id)

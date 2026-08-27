@@ -33,6 +33,10 @@ class Settings(BaseSettings):
     keyword_weight: float = 0.4
     default_search_limit: int = 20
 
+    # JWT Authentication
+    jwt_secret_key: str = "change-me-to-a-random-secret-in-production"
+    jwt_algorithm: str = "HS256"
+
     # CORS origins allowed to call the API
     cors_origins: list[str] = ["http://localhost:5173"]
 
