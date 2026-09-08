@@ -1,8 +1,10 @@
 import { useState } from 'react';
+import { useAuth } from '../contexts/AuthContext.jsx';
 
 const API_BASE_URL = 'http://localhost:8000/api/v1';
 
 function AdminImageGeneratorPage() {
+  const { token } = useAuth();
   const [activeTab, setActiveTab] = useState('analytics');
   
   // Form State
@@ -40,7 +42,10 @@ function AdminImageGeneratorPage() {
       
       const response = await fetch(endpoint, {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: {
+          'Content-Type': 'application/json',
+          ...(token && { Authorization: `Bearer ${token}` }),
+        },
         body: JSON.stringify(payload)
       });
       

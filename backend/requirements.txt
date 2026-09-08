@@ -31,3 +31,4 @@ bcrypt>=4.1.0
 
 # Browser automation (for images)
 playwright>=1.40.0
+cloudinary>=1.41.0
