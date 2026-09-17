@@ -404,8 +404,10 @@ fn render_poster_html(
       </div>
     </div>
 
-    <div style="text-align:center;margin-top:auto;">
-      <p style="font-size:16px;color:var(--vit-gold);margin:4px 0;font-weight:700;text-shadow:0 2px 5px rgba(0,0,0,0.8);">Start your research journey with UG Research Cell &bull; Email: assodean.ugresearch@vit.ac.in &bull; Office: MGR Block - MB 127</p>
+    <div style="text-align:center;margin-top:auto;display:flex;flex-direction:column;gap:4px;">
+      <p style="font-size:16px;color:var(--vit-gold);margin:0;font-weight:700;text-shadow:0 2px 5px rgba(0,0,0,0.8);">Start your research journey with UG Research Cell</p>
+      <p style="font-size:16px;color:var(--vit-gold);margin:0;font-weight:700;text-shadow:0 2px 5px rgba(0,0,0,0.8);">Email: assodean.ugresearch@vit.ac.in</p>
+      <p style="font-size:16px;color:var(--vit-gold);margin:0;font-weight:700;text-shadow:0 2px 5px rgba(0,0,0,0.8);">Office: MGR Block - MB 127</p>
     </div>
   </div>
 </body>
