@@ -39,10 +39,11 @@ export async function getStudent(studentId) {
   return invoke('get_student', { studentId });
 }
 
-export async function listStudents({ search, department, batch, limit, offset } = {}) {
+export async function listStudents({ search, department, school, batch, limit, offset } = {}) {
   return invoke('list_students', {
     search: search || null,
     department: department || null,
+    school: school || null,
     batch: batch || null,
     limit: limit || 50,
     offset: offset || 0,

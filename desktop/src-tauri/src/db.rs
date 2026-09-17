@@ -525,6 +525,7 @@ impl Database {
         &self,
         search: Option<&str>,
         department: Option<&str>,
+        school: Option<&str>,
         batch: Option<&str>,
         limit: i64,
         offset: i64,
@@ -545,6 +546,13 @@ impl Database {
                 let idx = param_values.len() + 1;
                 where_clauses.push(format!("department = ?{}", idx));
                 param_values.push(Box::new(d.to_string()));
+            }
+        }
+        if let Some(sch) = school {
+            if !sch.is_empty() {
+                let idx = param_values.len() + 1;
+                where_clauses.push(format!("school = ?{}", idx));
+                param_values.push(Box::new(sch.to_string()));
             }
         }
         if let Some(b) = batch {

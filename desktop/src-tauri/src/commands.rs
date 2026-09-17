@@ -84,12 +84,13 @@ pub fn list_students(
     db: State<Database>,
     search: Option<String>,
     department: Option<String>,
+    school: Option<String>,
     batch: Option<String>,
     limit: Option<i64>,
     offset: Option<i64>,
 ) -> Result<StudentListResponse, AppError> {
     let (students, total) = db.list_students(
-        search.as_deref(), department.as_deref(), batch.as_deref(),
+        search.as_deref(), department.as_deref(), school.as_deref(), batch.as_deref(),
         limit.unwrap_or(50), offset.unwrap_or(0),
     )?;
     Ok(StudentListResponse { students, total })
