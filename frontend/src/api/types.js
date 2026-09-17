@@ -12,13 +12,10 @@
  * @typedef {Object} Student
  * @property {string}  student_id    - University registration number (e.g. 24BCE1234)
  * @property {string}  student_name
- * @property {string}  [email]
  * @property {string}  [department]
  * @property {string}  [school]
  * @property {string}  [batch]
- * @property {string}  [profile_photo] - Cloudinary / S3 URL
- * @property {string}  [linkedin_url]
- * @property {string}  [github_url]
+ * @property {string}  [photo_url]     - Cloudinary / S3 URL
  * @property {string}  [created_at]
  * @property {number}  [papers_count]
  */

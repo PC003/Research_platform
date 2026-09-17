@@ -26,13 +26,10 @@ def _orm_to_response(row: Student, papers_count: int = 0) -> StudentResponse:
     return StudentResponse(
         student_id=row.student_id,
         student_name=row.student_name,
-        email=row.email,
         department=row.department,
         school=row.school,
         batch=row.batch,
-        profile_photo=row.profile_photo,
-        linkedin_url=row.linkedin_url,
-        github_url=row.github_url,
+        photo_url=row.photo_url,
         created_at=row.created_at,
         papers_count=papers_count,
     )
@@ -156,13 +153,10 @@ async def create_student(db: AsyncSession, data: StudentCreate) -> StudentRespon
     student = Student(
         student_id=data.student_id,
         student_name=data.student_name,
-        email=data.email,
         department=data.department,
         school=data.school,
         batch=data.batch,
-        profile_photo=data.profile_photo,
-        linkedin_url=data.linkedin_url,
-        github_url=data.github_url,
+        photo_url=data.photo_url,
     )
     db.add(student)
     await db.flush()
@@ -217,13 +211,12 @@ async def search_students(
     page: int = 1,
     limit: int = 20,
 ) -> PaginatedResponse[StudentResponse]:
-    """Search students by name, department, or email using ILIKE."""
+    """Search students by name, department, or student ID using ILIKE."""
     search_term = f"%{query}%"
 
     conditions = [
         Student.student_name.ilike(search_term),
         Student.department.ilike(search_term),
-        Student.email.ilike(search_term),
         Student.student_id.ilike(search_term),
     ]
 

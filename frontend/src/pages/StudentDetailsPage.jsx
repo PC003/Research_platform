@@ -73,7 +73,7 @@ function StudentDetailsPage() {
 
       <div className="mb-10 flex flex-col items-center gap-6 rounded-2xl border border-gray-200 bg-white p-8 text-center shadow-sm md:flex-row md:text-left">
         <img
-          src={student.profile_photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(student.student_name)}&size=120&background=random`}
+          src={student.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(student.student_name)}&size=120&background=random`}
           alt={student.student_name}
           className="h-24 w-24 rounded-full object-cover ring-4 ring-blue-50"
         />

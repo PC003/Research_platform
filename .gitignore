@@ -39,3 +39,11 @@ Thumbs.db
 *.log
 npm-debug.log*
 *.txt
+
+# Desktop / Tauri / Rust
+desktop/src-tauri/target/
+desktop/src-tauri/gen/
+desktop/node_modules/
+desktop/dist/
+*.rs.bk
+Cargo.lock

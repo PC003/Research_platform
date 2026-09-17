@@ -429,18 +429,14 @@ def generate_students(count: int = NUM_STUDENTS) -> list[dict]:
             idx += 1
             name = fake.name()
             student_id = generate_student_id(batch, dept_code, idx)
-            email = f"{name.lower().replace(' ', '.').replace('..', '.')}@vitstudent.ac.in"
 
             students.append({
                 "student_id": student_id,
                 "student_name": name,
-                "email": email[:150],
                 "department": dept,
                 "school": school,
                 "batch": batch,
-                "profile_photo": f"https://ui-avatars.com/api/?name={name.replace(' ', '+')}&background=random&size=200",
-                "linkedin_url": f"https://linkedin.com/in/{name.lower().replace(' ', '-')}-{random.randint(100, 999)}",
-                "github_url": f"https://github.com/{name.lower().replace(' ', '')}{random.randint(1, 99)}",
+                "photo_url": f"https://ui-avatars.com/api/?name={name.replace(' ', '+')}&background=random&size=200",
             })
 
     random.shuffle(students)

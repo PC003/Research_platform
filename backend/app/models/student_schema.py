@@ -6,7 +6,7 @@ These schemas define the API request/response shapes for student endpoints.
 from datetime import datetime
 
 # pyrefly: ignore [missing-import]
-from pydantic import BaseModel, Field, EmailStr
+from pydantic import BaseModel, Field
 
 
 class StudentBase(BaseModel):
@@ -18,16 +18,13 @@ class StudentBase(BaseModel):
         description="University registration number, e.g. 24BCE1234",
     )
     student_name: str = Field(..., max_length=100)
-    email: str | None = Field(default=None, max_length=150)
     department: str | None = Field(default=None, max_length=100)
     school: str | None = Field(default=None, max_length=100)
     batch: str | None = Field(default=None, max_length=20)
-    profile_photo: str | None = Field(
+    photo_url: str | None = Field(
         default=None,
         description="Cloudinary / S3 URL",
     )
-    linkedin_url: str | None = None
-    github_url: str | None = None
 
 
 class StudentCreate(StudentBase):
@@ -43,13 +40,10 @@ class StudentUpdate(BaseModel):
     """
 
     student_name: str | None = Field(default=None, max_length=100)
-    email: str | None = Field(default=None, max_length=150)
     department: str | None = Field(default=None, max_length=100)
     school: str | None = Field(default=None, max_length=100)
     batch: str | None = Field(default=None, max_length=20)
-    profile_photo: str | None = None
-    linkedin_url: str | None = None
-    github_url: str | None = None
+    photo_url: str | None = None
 
 
 class StudentResponse(StudentBase):

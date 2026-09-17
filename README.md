@@ -27,9 +27,10 @@ Research_platform/
 │       ├── components/ # Reusable UI components
 │       └── pages/      # Page-level components
 ├── scraper/          # Data scraping scripts (future)
-└── data/             # Dataset and vector indexes
-    ├── papers.json
-    └── faiss_index/
+├── data/             # Dataset and vector indexes
+│   ├── papers.json
+│   └── faiss_index/
+└── memory.md         # Project memory and AI context
 ```
 
 ## Getting Started

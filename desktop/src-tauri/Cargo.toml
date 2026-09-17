@@ -1,0 +1,52 @@
+[package]
+name = "ug-research-desktop"
+version = "0.1.0"
+description = "UG Research Desktop — Local-first student management and poster generation"
+authors = ["Piyush Chavan"]
+edition = "2021"
+
+[lib]
+name = "desktop_lib"
+crate-type = ["staticlib", "cdylib", "rlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+# Tauri core + plugins
+tauri = { version = "2", features = [] }
+tauri-plugin-opener = "2"
+tauri-plugin-dialog = "2"
+tauri-plugin-fs = "2"
+tauri-plugin-shell = "2"
+
+# Serialization
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+# Database
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+# Excel parsing
+calamine = "0.26"
+zip = "2"
+quick-xml = "0.37"
+
+# Image processing
+image = "0.25"
+base64 = "0.22"
+
+# Utilities
+chrono = { version = "0.4", features = ["serde"] }
+uuid = { version = "1", features = ["v4"] }
+thiserror = "2"
+log = "0.4"
+env_logger = "0.11"
+dirs = "6"
+
+[profile.release]
+codegen-units = 1
+lto = true
+opt-level = "s"
+panic = "abort"
+strip = true

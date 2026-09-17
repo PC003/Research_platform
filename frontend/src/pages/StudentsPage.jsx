@@ -126,7 +126,7 @@ function StudentsPage() {
               >
                 <div className="flex items-start gap-3">
                   <img
-                    src={student.profile_photo || `https://ui-avatars.com/api/?name=${encodeURIComponent(student.student_name)}&size=80&background=random`}
+                    src={student.photo_url || `https://ui-avatars.com/api/?name=${encodeURIComponent(student.student_name)}&size=80&background=random`}
                     alt={student.student_name}
                     className="h-12 w-12 rounded-full object-cover"
                   />
